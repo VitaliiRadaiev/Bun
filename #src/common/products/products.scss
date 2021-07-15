@@ -1,0 +1,125 @@
+.products {
+    margin-bottom: 180px;
+    @media (max-width: $md3+px) {
+        margin-bottom: 50px;
+    }
+    &__head {
+        text-align: center;
+        margin-bottom: 49px;
+
+        @media (max-width: $md3+px) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 23px;
+        row-gap: 25px;
+        margin-bottom: 73px;
+
+        @media (max-width: $md3+px) {
+            grid-template-columns: repeat(2, 1fr);
+            margin-bottom: 50px;
+        }
+
+        @media (max-width: 575.98px) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    &__bottom {
+        & .text-block {
+            max-width: 485px;
+            display: flex;
+            flex-direction: column;
+            font-size: 18px;
+
+            & .btn-default {
+                align-self: center;
+                margin-top: 21px;
+            }
+        }
+    }
+}
+
+.card-product {
+    display: block;
+    border-radius: 0 0 2px 2px;
+    background-color: #fbfbfb;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    color: $textColor;
+    @media (min-width: 992px) {
+        &:hover {
+            box-shadow: 0 11px 55px 10px rgba(0, 0, 0, 0.07), 0 13px 18px -8px rgba(0, 0, 0, 0.15);
+        }
+    }
+    &__img {
+        padding-bottom: 59.4%;
+    }
+
+    &__label {
+        position: absolute;
+        top: 20px;
+        left: 18px;
+    }
+
+    &__head {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: 3;
+        padding: 15px 20px 19px;
+        color: #ffffff;
+    }
+
+    &__title {
+        font-family: $berninoSansNarrow;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1.2em;
+        margin-bottom: 5px;
+    }
+
+    &__subtitle {
+        font-size: 13px;
+        line-height: 1.3em;
+    }
+
+    &__bottom {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        min-height: 50px;
+        padding: 10px 20px 10px 20px;
+        justify-content: space-between;
+        @media (min-width: 992px) {
+            padding-right: 29px;
+        }
+    }
+
+    &__bottom-item {
+        margin: 10px 0;
+        display: flex;
+        align-items: center;
+        font-size: 13px;
+        line-height: 1.2em;
+        
+
+        &:first-child {
+            font-weight: 700;
+        }
+
+        &:not(:last-child) {
+            margin-right: 39px;
+        }
+
+        & img {
+            max-height: 17px;
+            width: auto;
+            margin-right: 13px;
+        }
+    }
+}

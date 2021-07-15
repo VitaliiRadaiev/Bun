@@ -1,0 +1,96 @@
+.categories {
+    margin-bottom: 78px;
+
+    @media (max-width: $md3+px) {
+        margin-bottom: 25px;
+    }
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -11.5px;
+
+        & > li {
+            flex: 0 1 33.333%;
+            padding: 0 11.5px;
+            margin-bottom: 25px;
+
+            @media (max-width: $md3+px) {
+                flex: 0 1 50%;
+            }
+
+            @media (max-width: 575.98px) {
+                flex: 0 1 100%;
+            }
+        
+        }
+    }
+}
+
+.card-category {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-shadow: 0 11px 55px 10px rgba(0, 0, 0, 0.07);
+    border-radius: 0 2px 2px;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+
+    @media (min-width: 992px) {
+        &:hover {
+            box-shadow: 0 11px 55px 10px rgba(0, 0, 0, 0.07), 0 13px 18px -8px rgba(0, 0, 0, 0.15);
+            & .card-category__text {
+                font-weight: 700;
+            }
+        }
+    }
+
+    &__img {
+        padding-bottom: 59.4%;
+    }
+
+    &__title {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        color: #ffffff;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1.4em;
+        padding: 10px 30px 19px;
+
+        @media (max-width: $md2+px) {
+            padding: 10px 20px 19px;
+            font-size: 17px;
+        }
+    }
+
+    &__text {
+        display: flex;
+        align-items: center;
+        min-height: 79px;
+        flex: 1 1 auto;
+        padding: 20px 60px 20px 30px;
+        position: relative;
+        color: #000000;
+        font-size: 14px;
+        line-height: 18px;
+        transition: all .3s ease;
+
+        @media (max-width: $md2+px) {
+            padding: 20px 60px 20px 20px;
+        }
+
+        &:before {
+            position: absolute;
+            content: "\e90e";
+            font-family: 'icomoon';
+            font-size: 16px;
+            color: $mainColor2;
+            font-weight: 400;
+            top: 50%;
+            right: 33px;
+            transform: translateY(-50%);
+            
+        }
+    }
+}

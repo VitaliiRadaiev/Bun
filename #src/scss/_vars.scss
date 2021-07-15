@@ -1,0 +1,30 @@
+
+
+//<ШРИФТЫ>===========================================================================================================
+$berninoSansCondensed: "jaf-bernino-sans-condensed",sans-serif; //400,700
+$berninaSans:  "jaf-bernina-sans",sans-serif; //400,600,700,800
+$berninaSansComp :  "jaf-bernina-sans-comp",sans-serif; //400, 700
+$berninaSansCondensed :  "jaf-bernina-sans-condensed",sans-serif; //400, 700
+$berninaSansNarrow :  "jaf-bernina-sans-narrow",sans-serif; //400, 700
+$berninoSans:  "jaf-bernino-sans",sans-serif; //400, 700
+$berninoSansComp  : "jaf-bernino-sans-comp",sans-serif; //400, 700
+$berninoSansNarrow  : "jaf-bernino-sans-narrow",sans-serif; //400, 700
+
+$mainFontFamily:  $berninaSans;
+//</ШРИФТЫ>===========================================================================================================
+
+//<РАЗМЕРЫ КОНТЕЙНЕРА>===========================================================================================================
+$minwidth: 320px;
+$mw: 1170;
+$md1: 1267.98;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+//</РАЗМЕРЫ КОНТЕЙНЕРА>===========================================================================================================
+
+$textColor: #000;
+$mainColor:  #1bacd6;
+$mainColor2: #3fc453;
+//$hover: #158cad;
+$hover: #3fc453;
+$gradient: linear-gradient(to right, #1bacd6 0%, #3fc453 100%);

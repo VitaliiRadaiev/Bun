@@ -1,0 +1,117 @@
+.vacancies {
+    margin-bottom: 164px;
+
+    @media (max-width: $md3+px) {
+        margin-bottom: 50px;
+    }
+
+    &__body {
+        max-width: 1125px;
+    }
+
+    &__title {
+        text-align: center;
+        margin-bottom: 33px;
+
+        @media (max-width: $md3+px) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__list {
+        & > li {
+            &:not(:last-child) {
+                margin-bottom: 40px;
+
+                @media (max-width: $md4+px) {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+}
+
+.vacancy-card {
+    display: flex;
+    border-radius: 2px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    color: $textColor;
+
+    @media (min-width: 992px) {
+        &:hover {
+            box-shadow: 0 11px 55px 10px rgba(0, 0, 0, 0.07), 0 13px 18px -8px rgba(0, 0, 0, 0.15);
+            background-color: #ffffff;
+        }
+    }
+
+    @media (max-width: $md4+px) {
+        display: block;
+    }
+
+    &__img {
+        flex: 0 0 297px;
+        min-height: 160px;
+        border-radius: 2px;
+        overflow: hidden;
+
+        @media (max-width: $md3+px) {
+            flex: 0 0 160px;
+            min-height: 100px;
+        }
+
+        @media (max-width: $md4+px) {
+            min-height: 160px;
+        }
+    }
+
+    &__text-wrap {
+        flex: 1 1 auto;
+        padding: 26px 27px 18px 32px;
+
+        @media (max-width: $md3+px) {
+            padding: 15px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 8px;
+    }
+
+    &__text {
+        font-size: 14px;
+        line-height: 18px;
+        margin-bottom: 8px;
+    }
+
+    &__bottom {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        & .btn-default {
+            margin-bottom: 10px;
+        }
+    }
+
+    &__flex-group {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+    }
+
+    &__flex-item {
+        display: flex;
+        align-items: center;
+        margin: 5px 0;
+        margin-right: 25px;
+
+
+        & img {
+            max-height: 14px;
+            margin-right: 16px;
+            flex: 0 0 auto;
+        }
+    }
+}
