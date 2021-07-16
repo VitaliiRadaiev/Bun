@@ -1,0 +1,133 @@
+.article-single-page {
+    & .hero {
+        @media (min-width: 768px) {
+            margin-bottom: 194px;
+        }
+    }
+}
+.article {
+    margin-bottom: 82px;
+
+    @media (max-width: $md3+px) {
+        margin-bottom: 50px;
+    }
+
+    &__body {
+        max-width: 1124px;
+
+        & > *:not(figure) {
+            max-width: 723px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+.read-also {
+    background: #f1f1f1;
+    padding: 103px 0 75px;
+
+    @media (max-width: $md3+px) {
+        padding-top: 50px;
+        padding-bottom: 20px;
+    }
+
+    &__head {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 23px;
+
+        & .link-icon-right {
+            margin-bottom: 25px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 20px;
+        margin-right: 20px;
+    }
+}
+
+.news-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -11.5px;
+
+    & > li {
+        padding: 0 11.5px;
+        flex: 0 1 33.3333%;
+        margin-bottom: 42px;
+
+        @media (max-width: $md2+px) {
+            flex: 0 1 50%;
+        }
+        @media (max-width: $md3+px) {
+            flex: 0 1 100%;
+        }
+    }
+}
+
+.news-card-v2 {
+    transition: all 0.3s ease;
+    border-radius: 0px 2px 2px 2px;
+    overflow: hidden;
+    display: block;
+    @media (min-width: 992px) {
+        &:hover {
+            background: #ffffff;
+            box-shadow: 0 11px 55px 10px rgba(0, 0, 0, 0.07), 0 13px 18px -8px rgba(0, 0, 0, 0.15);        }
+    }
+    &__img {
+        padding-bottom: 59.4%;
+    }
+
+    &__label {
+        position: absolute;
+        top: 20px;
+        left: 18px;
+        z-index: 2;
+    }
+
+    &__head {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: 3;
+        padding: 15px 20px 19px;
+        color: #ffffff;
+        width: 100%;
+    }
+
+    &__title {
+        font-family: $berninoSansNarrow;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1.2em;
+        margin-bottom: 5px;
+    }
+
+    &__subtitle {
+        font-size: 13px;
+        line-height: 1.3em;
+    }
+
+    &__bottom {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        min-height: 61px;
+        padding: 10px 20px 10px 20px;
+        justify-content: flex-end;
+
+        & > span {
+            @media (min-width: 992px) {
+                &:hover {
+                    color: $textColor;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

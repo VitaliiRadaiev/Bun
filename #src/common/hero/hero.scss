@@ -3,7 +3,7 @@
     margin-bottom: 130px;
 
     @media (max-width: $md3+px) {
-        margin-bottom: 50px;
+        margin-bottom: 100px;
     }
 
     &__img {
@@ -38,6 +38,33 @@
     &__title {
         margin-top: 30px;
         margin-bottom: 10px
+    }
+
+    &__box-info {
+        max-width: 618px;
+        margin-bottom: -74px;
+
+        @media (min-width: 768px) {
+            &.black-box {
+                padding: 60px 108px 60px 108px;
+                min-height: 260px;  
+            }
+
+        }
+
+        & .card-label {
+            align-self: flex-start;
+            margin-bottom: 11px;
+        }
+
+        & .black-box__title {
+            font-size: 30px;
+            line-height: 1.2em;
+
+            @media (max-width: $md4+px) {
+                font-size: 25px;
+            }
+        }
     }
 }
 
