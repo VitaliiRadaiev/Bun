@@ -3,6 +3,35 @@
     @media (max-width: $md3+px) {
         margin-bottom: 50px;
     }
+
+    &.products_listing {
+        @media (min-width: 768px) {
+            margin-bottom: 91px;
+        }
+        & .products__head {
+            text-align: left;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin-bottom: 38px;
+        }
+
+        & .products__list {
+            @media (min-width: 768px) {
+                row-gap: 42px;
+                margin-bottom: 71px;
+            }
+        }
+    }
+
+    &__head-select-label {
+        font-size: 13px;
+        line-height: 1.2em;
+        font-weight: 700;
+        flex: 0 0 auto;
+        margin-right: 25px;
+    }
+
     &__head {
         text-align: center;
         margin-bottom: 49px;
@@ -26,6 +55,33 @@
 
         @media (max-width: 575.98px) {
             grid-template-columns: repeat(1, 1fr);
+        }
+
+        & > li {
+            &.big {
+                @media (min-width: 768px) {
+                    grid-column: span 2;
+
+                    & .card-product {
+                        position: relative;
+                        overflow: hidden;
+                        border-radius: 2px 2px 0 0;
+                        & .card-product__img {
+                            padding-bottom: max(46%, 300px);
+                        }
+
+                        & .card-product__bottom {
+                            position: absolute;
+                            z-index: 2;
+                            bottom: 0;
+                            right: 0;
+                            background: #fbfbfb;
+                            border-radius: 2px 2px 0px 0;
+                            margin-left: 250px;
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -106,7 +162,6 @@
         align-items: center;
         font-size: 13px;
         line-height: 1.2em;
-        
 
         &:first-child {
             font-weight: 700;

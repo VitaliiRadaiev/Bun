@@ -1,0 +1,29 @@
+.breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+
+    & > li {
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 18px;
+        color: #ffffff;
+
+        &:not(:last-child) {
+            &:after {
+                content: '•';
+                margin-right: 4px;
+            }
+        }
+
+        & > a {
+            color: #fff;
+            transition: all .3s ease;
+
+            @media (min-width: 992px) {
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

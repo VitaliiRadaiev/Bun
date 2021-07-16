@@ -28,6 +28,7 @@ window.addEventListener('load', function () {
 	@@include('../common/checkbox/checkbox.js');
 	@@include('../common/header/header.js');
 	@@include('../common/footer/footer.js');
+	@@include('../common/new-projects/new-projects.js');
 	//@@includ e('../common/popup/popup.js');
 	
 });

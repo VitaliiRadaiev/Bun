@@ -36,40 +36,41 @@
 	// .select__item
 	&__item {
 		position: relative;
-		//font-family: $mainFontFamily;
-		min-width: 294px;
+		min-width: 168px;
 	}
 	// .select__title
 	&__title {
-		color: $textColor;
-		background-color: #fff;
+		display: flex;
+		align-items: center;
+		min-height: 42px;
+		background: #ffffff;
+		border: 1px solid #e0e7ee;
+		border-radius: 5px;
+		padding: 10px 36px 10px 28px;
 		cursor: pointer;
-		@media (max-width: $md2+px) {
-			font-size: 18px;
+
+		&:before {
+			position: absolute;
+			font-family: "icomoon";
+			content: "\e904";
+			top: 50%;
+			right: 18px;
+			transform: translateY(-50%);
+			transition: all 0.3s ease;
+			font-weight: 700;
+			color: #90A1B5;
+			font-size: 11px;
 		}
 	}
 	// .select__value
 	&__value {
-		display: flex;
-		font-size: 14px;
-		line-height: 170%;
-		padding: 0px 15px;
-		align-items: center;
-		justify-content: space-between;
-		flex-direction: row-reverse;
-		span {
-			//font-family: $mainFontFamily;
-			display: -webkit-box;
-			-webkit-line-clamp: 1;
-			-webkit-box-orient: vertical;
-		}
-		&:before {
-			content: "+";
-			display: inline-block;
-			transition: all 0.3s ease 0s;
-/*			width: 11px;
-			height: 7px;*/
-			//background: url("../img/icons/select.svg") center / 100% no-repeat;
+		font-weight: bold;
+		font-size: 11px;
+		line-height: 18px;
+		color: #445870;
+
+		& > span {
+			font-family: $berninoSansNarrow;
 		}
 	}
 	&__input {
@@ -82,7 +83,7 @@
 		color: #000;
 		display: none;
 		position: absolute;
-		top: 29px;
+		top: 100%;
 		border-radius: 0 0 4px 4px;
 		min-width: 100%;
 		left: 0;
@@ -110,9 +111,9 @@
 	}
 	&._active {
 		z-index: 5;
-		.select__value {
+		.select__title {
 			&:before {
-				transform: rotate(-180deg);
+				transform: translateY(-50%) scale(1, -1);
 			}
 		}
 		.select__options {
@@ -149,76 +150,72 @@
 
 //<RADIO>====================================================================================================
 .radio-wrap {
+	&__radio {
+		display: none;
 
+		&:checked {
+			& + .radio-wrap__label {
+				&:after {
+					transform: translateY(-50%) scale(1);
+				}
+			}
+		}
+	}
 
-    &__radio {
-        display: none;
+	&__label {
+		display: flex;
+		align-items: center;
+		//font-family: $seconFontFamily;
+		font-weight: bold;
+		font-size: 18px;
+		line-height: 120%;
+		text-transform: capitalize;
+		color: rgba(#000, 0.5);
+		position: relative;
+		padding-left: 30px;
+		cursor: pointer;
 
-        &:checked {
-            & + .radio-wrap__label {
-                &:after {
-                    transform: translateY(-50%) scale(1);
-                }
-            }
-        }
-    }
+		&.visamaster {
+			color: #000;
+		}
 
-    &__label {
-        display: flex;
-        align-items: center;
-        //font-family: $seconFontFamily;
-        font-weight: bold;
-        font-size: 18px;
-        line-height: 120%;
-        text-transform: capitalize;
-        color: rgba(#000, 0.5);
-        position: relative;
-        padding-left: 30px;
-        cursor: pointer;
+		& > span {
+			min-width: 50px;
+			margin-right: 15px;
 
-        &.visamaster {
-            color: #000;
-        }
+			& img {
+				width: 100%;
+			}
+		}
 
-        & > span {
-            min-width: 50px;
-            margin-right: 15px;
+		&:before {
+			position: absolute;
+			content: "";
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+			height: 15px;
+			width: 15px;
+			border-radius: 50%;
+			border: 1px solid #000;
+		}
 
-            & img {
-                width: 100%;
-            }
-        }
-
-        &:before {
-            position: absolute;
-            content: '';
-            top: 50%;
-            left: 0;
-            transform: translateY(-50%);
-            height: 15px;
-            width: 15px;
-            border-radius: 50%;
-            border: 1px solid #000;
-        }
-
-        &:after {
-            position: absolute;
-            content: '';
-            top: 50%;
-            left: 0;
-            transform: translateY(-50%) scale(0);
-            transition: all .2s ease;
-            height: 9px;
-            width: 9px;
-            border-radius: 50%;
-            background: red;
-            left: 3px;
-            
-        }
-    }
+		&:after {
+			position: absolute;
+			content: "";
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%) scale(0);
+			transition: all 0.2s ease;
+			height: 9px;
+			width: 9px;
+			border-radius: 50%;
+			background: red;
+			left: 3px;
+		}
+	}
 }
 //</RADIO>====================================================================================================
-
 
 // //<OPTIONS (opt+tab)>====================================================================================================
 // .options {
@@ -335,59 +332,59 @@
 // //</RATING>====================================================================================================
 
 //<QUANTITY>====================================================================================================
-	// .quantity {
-	// 	width: 109px;
-	// 	height: 40px;
-	// 	display: flex;
-	// 	background: #F8F8FA;
-	// 	// .quantity__button
-	// 	&__button {
-	// 		flex: 0 0 30px;
-	// 		position: relative;
-	// 		cursor: pointer;
-	// 		&::before,
-	// 		&::after {
-	// 			content: "";
-	// 			position: absolute;
-	// 			top: 50%;
-	// 			left: 50%;
-	// 			transition: all 0.3s ease 0s;
-	// 			margin: 0px 0px 0px -4.5px;
-	// 			background-color: #a6a6a6;
-	// 			width: 9px;
-	// 			height: 1px;
-	// 		}
-	// 		@media (min-width: $md2+px) {
-	// 			&:hover {
-	// 				&::before,
-	// 				&::after {
-	// 					background-color: rgba(0, 0, 0, 0.5);
-	// 				}
-	// 			}
-	// 		}
-	// 		// .quantity__button_plus
-	// 		&_plus {
-	// 			&::before {
-	// 				transform: rotate(-90deg);
-	// 			}
-	// 		}
-	// 		// .quantity__button_minus
-	// 		&_minus {
-	// 		}
-	// 	}
-	// 	// .quantity__input
-	// 	&__input {
-	// 		flex: 1 1 auto;
-	// 		input {
-	// 			background: #F8F8FA;
-	// 			height: 100%;
-	// 			color: $textColor;
-	// 			font-size: 14px;
-	// 			width: 100%;
-	// 			text-align: center;
-	// 		}
-	// 	}
-	// }
+// .quantity {
+// 	width: 109px;
+// 	height: 40px;
+// 	display: flex;
+// 	background: #F8F8FA;
+// 	// .quantity__button
+// 	&__button {
+// 		flex: 0 0 30px;
+// 		position: relative;
+// 		cursor: pointer;
+// 		&::before,
+// 		&::after {
+// 			content: "";
+// 			position: absolute;
+// 			top: 50%;
+// 			left: 50%;
+// 			transition: all 0.3s ease 0s;
+// 			margin: 0px 0px 0px -4.5px;
+// 			background-color: #a6a6a6;
+// 			width: 9px;
+// 			height: 1px;
+// 		}
+// 		@media (min-width: $md2+px) {
+// 			&:hover {
+// 				&::before,
+// 				&::after {
+// 					background-color: rgba(0, 0, 0, 0.5);
+// 				}
+// 			}
+// 		}
+// 		// .quantity__button_plus
+// 		&_plus {
+// 			&::before {
+// 				transform: rotate(-90deg);
+// 			}
+// 		}
+// 		// .quantity__button_minus
+// 		&_minus {
+// 		}
+// 	}
+// 	// .quantity__input
+// 	&__input {
+// 		flex: 1 1 auto;
+// 		input {
+// 			background: #F8F8FA;
+// 			height: 100%;
+// 			color: $textColor;
+// 			font-size: 14px;
+// 			width: 100%;
+// 			text-align: center;
+// 		}
+// 	}
+// }
 //</QUANTITY>====================================================================================================
 
 //<PRICE FILTER>====================================================================================================
@@ -395,7 +392,7 @@
 // 	padding-top: 22px;
 // 	&__slider {
 // 		height: 2px;
-		
+
 // 		margin-bottom: 30px;
 
 // 		@media (max-width: $md2+px ) {
@@ -460,7 +457,7 @@
 // 		width: 10%;
 // 		height: 10%;
 // 		display: flex;
-// 		justify-content: flex-end;		
+// 		justify-content: flex-end;
 // 	}
 
 // 	& .noUi-connect {
@@ -490,7 +487,7 @@
 
 // .values-price-filter {
 // 	margin: 0px;
-	
+
 // 	& .input {
 // 		display: none;
 // 	}
