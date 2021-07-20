@@ -8,6 +8,10 @@
     color: #fff;
     position: relative;
 
+    & .btn-default  {
+      align-self: flex-start;  
+    }
+
     &:before {
         position: absolute;
         content: "";
@@ -88,5 +92,25 @@
         font-weight: 400;
         font-size: 13px;
         line-height: 18px;
+    }
+
+    &__list {
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 18px;
+        margin-bottom: 44px;
+        & > li {
+            display: flex;
+            align-items: center;
+
+            &:not(:last-child) {
+                margin-bottom: 26px;
+            }
+
+            & img {
+                flex: 0 0 auto;
+                margin-right: 24px;
+            }
+        }
     }
 }

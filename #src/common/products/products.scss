@@ -24,6 +24,16 @@
         }
     }
 
+    &:not(.products_listing) {
+        & .products__list {
+            display: none;
+
+            &.active {
+                display: grid;
+            }
+        }
+    }
+
     &__head-select-label {
         font-size: 13px;
         line-height: 1.2em;
@@ -42,6 +52,7 @@
     }
 
     &__list {
+
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         column-gap: 23px;

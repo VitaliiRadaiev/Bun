@@ -151,8 +151,8 @@ if($('.anchor').length>0) {
 function createTabs(containerName = false, triggersName = false, tabsName = false) {
     let container = document.querySelector(`${containerName}`);
     if(container) {
-       let allTriggers = document.querySelectorAll(`${triggersName}`);
-       let allTabs = document.querySelectorAll(`${tabsName}`);
+       let allTriggers = container.querySelectorAll(`${triggersName}`);
+       let allTabs = container.querySelectorAll(`${tabsName}`);
 
        if(!allTabs.length) {
         let err = new Error('Tabs not found.');

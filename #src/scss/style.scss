@@ -573,6 +573,38 @@ button.btn-default {
 		}
 	}
 }
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+
+	& td {
+		height: 60px;
+		font-size: 13px;
+		line-height: 18px;
+		color: rgba(#000, 0.5);
+		border-top: 1px solid rgba(#979797, 0.3);
+		border-bottom: 1px solid rgba(#979797, 0.3);
+		&:not(:last-child) {
+			padding-right: 24px;
+		}
+
+		& > strong {
+			font-weight: 700;
+			color: #000;
+		}
+
+		& a {
+			color: #1BACD6;
+			text-decoration: underline;
+			font-weight: 700;
+		}
+
+		& img[data-tooltip-text] {
+			margin-left: 10px;
+		}
+	}
+}
 // === and TEXT CONTETN BLOCK ========================================================================
 
 // ==== BLOCKS =====================================================
@@ -592,6 +624,8 @@ button.btn-default {
 @import "../common/new-projects/new-projects";
 @import "../common/gallery-slider/gallery-slider";
 @import "../common/popup-gallery-slider/popup-gallery-slider";
+@import "../common/hero-v2/hero-v2";
+@import "../common/gallery/gallery";
 // ==== BLOCKS =====================================================
 
 // ==== PAGES =====================================================
@@ -599,5 +633,6 @@ button.btn-default {
 @import "pages/home";
 @import "pages/property-overview";
 @import "pages/article-single";
+@import "pages/property-single";
 
 // ==== AND PAGES =====================================================

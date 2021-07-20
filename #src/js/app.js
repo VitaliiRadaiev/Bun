@@ -32,6 +32,19 @@ window.addEventListener('load', function () {
 	@@include('../common/gallery-slider/gallery-slider.js');
 	@@include('../common/popup/popup.js');
 	@@include('../common/popup-gallery-slider/popup-gallery-slider.js');
+	@@include('../common/products/products.js');
+
+
+
+	let tooltipItems = document.querySelectorAll('[data-tooltip-text]');
+	if(tooltipItems.length) {
+		tooltipItems.forEach(item => {
+			tippy(item, {
+				content: item.dataset.tooltipText || '',
+			  });
+		})
+	}
+
 });
 
 window.addEventListener('DOMContentLoaded', function() {

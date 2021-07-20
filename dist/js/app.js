@@ -175,8 +175,8 @@ if($('.anchor').length>0) {
 function createTabs(containerName = false, triggersName = false, tabsName = false) {
     let container = document.querySelector(`${containerName}`);
     if(container) {
-       let allTriggers = document.querySelectorAll(`${triggersName}`);
-       let allTabs = document.querySelectorAll(`${tabsName}`);
+       let allTriggers = container.querySelectorAll(`${triggersName}`);
+       let allTabs = container.querySelectorAll(`${tabsName}`);
 
        if(!allTabs.length) {
         let err = new Error('Tabs not found.');
@@ -1224,53 +1224,72 @@ document.addEventListener('keydown', function(e) {
         totalImages.innerText = num;
     }
 
-    let dataThumb = new Swiper(popupGalleryThumb.querySelector('.swiper-container'), {
-        loop: true,
-        observer: true,
-        observeParents: true,
-        slidesPerView: 'auto',
-        spaceBetween: 18,
-        speed: 800,
-        freeMode: true,
-        watchSlidesVisibility: true,
-        watchSlidesProgress: true,
-    });
-    let dataMain = new Swiper(popupGalleryMain.querySelector('.swiper-container'), {
-        loop: true,
-        spaceBetween: 18,
-        observer: true,
-        observeParents: true,
-        slidesPerView: 1,
-        speed: 800,
-        preloadImages: false,
-        lazy: {
-            loadPrevNext: true,
-        },
-        navigation: {
-            nextEl: popupGalleryMain.querySelector('.popup-gallery-slider__btn-next'),
-            prevEl: popupGalleryMain.querySelector('.popup-gallery-slider__btn-prev'),
-        },
-        thumbs: {
-            swiper: dataThumb,
-        },
-        pagination: {
-            el: popupGalleryThumb.querySelector('.swiper-pagination'),
-            type: "fraction",
-        },
-    });
-
-    let openTriggersItems = document.querySelectorAll('[data-to-popup-slide]');
-    if(openTriggersItems.length) {
-        openTriggersItems.forEach(item => {
-            let id = item.dataset.toPopupSlide;
-            item.addEventListener('click', () => {
-                dataMain.slideTo(id);
+    if(popupGalleryMain && popupGalleryThumb) {
+        let dataThumb = new Swiper(popupGalleryThumb.querySelector('.swiper-container'), {
+            loop: true,
+            observer: true,
+            observeParents: true,
+            slidesPerView: 'auto',
+            spaceBetween: 18,
+            speed: 800,
+            freeMode: true,
+            watchSlidesVisibility: true,
+            watchSlidesProgress: true,
+        });
+        let dataMain = new Swiper(popupGalleryMain.querySelector('.swiper-container'), {
+            loop: true,
+            spaceBetween: 18,
+            observer: true,
+            observeParents: true,
+            slidesPerView: 1,
+            speed: 800,
+            preloadImages: false,
+            lazy: {
+                loadPrevNext: true,
+            },
+            navigation: {
+                nextEl: popupGalleryMain.querySelector('.popup-gallery-slider__btn-next'),
+                prevEl: popupGalleryMain.querySelector('.popup-gallery-slider__btn-prev'),
+            },
+            thumbs: {
+                swiper: dataThumb,
+            },
+            pagination: {
+                el: popupGalleryThumb.querySelector('.swiper-pagination'),
+                type: "fraction",
+            },
+        });
+    
+        let openTriggersItems = document.querySelectorAll('[data-to-popup-slide]');
+        if(openTriggersItems.length) {
+            openTriggersItems.forEach(item => {
+                let id = item.dataset.toPopupSlide;
+                item.addEventListener('click', () => {
+                    dataMain.slideTo(id);
+                })
             })
-        })
+        }
     }
 
-
 };
+	{
+    let products = document.querySelector('.products_tabs');
+    if(products) {
+        createTabs('.products_tabs', '.nav__link', '.products__list');
+    }
+};
+
+
+
+	let tooltipItems = document.querySelectorAll('[data-tooltip-text]');
+	if(tooltipItems.length) {
+		tooltipItems.forEach(item => {
+			tippy(item, {
+				content: item.dataset.tooltipText || '',
+			  });
+		})
+	}
+
 });
 
 window.addEventListener('DOMContentLoaded', function() {

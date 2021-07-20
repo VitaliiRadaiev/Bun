@@ -25,6 +25,7 @@
         font-size: 12px;
         letter-spacing: 0.2px;
         line-height: 18px;
+        color: rgba($textColor, 0.5);
         
         @media (min-width: 992px) {
             &:hover {
