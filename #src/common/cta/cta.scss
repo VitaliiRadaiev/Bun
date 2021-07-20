@@ -1,0 +1,119 @@
+.cta {
+    background-color: #000;
+    margin-bottom: 160px;
+
+    @media (max-width: $md3+px) {
+        margin-bottom: 130px;
+    }
+    &__body {
+
+        max-width: 1125px;
+
+        @media (min-width: 768px) {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__col-1 {
+        color: #fff;
+        padding: 50px 0 30px;
+        position: relative;
+
+        @media (min-width: 768px) {
+            flex: 1 1 auto;
+            max-width: 394px;
+            min-height: 520px;
+            padding: 50px 30px 50px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            &:before {
+                position: absolute;
+                content: '';
+                left: 0;
+                bottom: 0;
+                width: 200px;
+                height: 12px;
+                background-image: $gradient;
+                transform: translateY(100%);
+            }
+        }
+    }
+
+    &__col-2 {
+        flex: 0 0 49.16%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    &__title {
+        margin-bottom: 50px;
+
+        @media (max-width: $md3+px) {
+            margin-bottom: 25px;
+        }
+    }
+
+    & .link-icon-left {
+        color: #fff;
+        margin-bottom: 48px;
+
+        @media (max-width: $md3+px) {
+            margin-bottom: 25px;
+        }
+    }
+
+    &__text {
+    }
+
+    &__form {
+        background-color: #fff;
+        box-shadow: 0px 13px 18px -8px rgba(0, 0, 0, 0.15), 0px 11px 55px 10px rgba(0, 0, 0, 0.07);
+        border-radius: 2px;
+        margin-bottom: -76px;
+        padding: 60px 106px 60px 69px;
+        width: 100%;
+        
+        @media (min-width: 768px) {
+            max-width: 510px;
+
+        }
+
+        @media (max-width: $md2+px) {
+            padding: 60px 40px;
+        }
+
+        @media (max-width: $md4+px) {
+            padding: 30px 15px;
+        }
+    }
+}
+
+.form {
+    &__title {
+        margin-bottom: 20px;
+    }
+
+    &__group {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    &__item {
+        margin-bottom: 20px;
+        flex: 0 1 100%;
+    }
+
+    &__item-half {
+        
+        @media (min-width: 480px) {
+            flex: 0 1 calc(50% - 10px);
+
+        }
+    }
+}

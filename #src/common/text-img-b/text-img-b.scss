@@ -5,6 +5,38 @@
         margin-bottom: 100px;
     }
 
+    &.text-img-b_revers {
+
+        @media (min-width: 768px) {
+            & .text-img-b__body {
+                flex-direction: row-reverse;
+            }
+    
+            & .text-img-b__col-1 {
+                padding-right: 0;
+                padding-left: 30px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+            }
+
+            & .text-img-b__col-2 {
+                margin-left: 0;
+                margin-right: 107px;
+
+                & .black-box  {
+                    left: auto;
+                    right: -107px;
+                }
+            }
+
+            & .text-img-b__text-wrap {
+                max-width: 404px;
+            }
+        }
+
+    }
+
     &__body {
         
         @media (min-width: 992px) {

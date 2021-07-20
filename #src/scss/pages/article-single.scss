@@ -32,6 +32,16 @@
         padding-bottom: 20px;
     }
 
+    &.read-also_transparent {
+        margin-bottom: 88px;
+        padding: 0;
+        background-color: transparent;
+
+        @media (max-width: $md3+px) {
+            margin-bottom: 40px;
+        }
+    }
+
     &__head {
         display: flex;
         flex-wrap: wrap;
