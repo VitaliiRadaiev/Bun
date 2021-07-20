@@ -30,8 +30,8 @@ window.addEventListener('load', function () {
 	@@include('../common/footer/footer.js');
 	@@include('../common/new-projects/new-projects.js');
 	@@include('../common/gallery-slider/gallery-slider.js');
-	//@@includ e('../common/popup/popup.js');
-	
+	@@include('../common/popup/popup.js');
+	@@include('../common/popup-gallery-slider/popup-gallery-slider.js');
 });
 
 window.addEventListener('DOMContentLoaded', function() {

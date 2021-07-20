@@ -1,0 +1,109 @@
+.popup-gallery-slider {
+    margin:  0 auto;
+    max-width: 1044px;
+    width: 100%;
+
+    &__main {
+        position: relative;
+        margin-bottom: 18px;
+    }
+
+    &__btn {
+        position: absolute;
+        z-index: 2;
+        height: 50px;
+        width: 50px;
+        top: 53%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all .3s ease;
+
+        @media (max-width: 1199.98px) {
+            border-radius: 4px;
+            background-color: rgba(#fff,0.4);
+        }
+
+        @media (max-width: 1200px) {
+            &:hover {
+                background-color:  rgba(#fff,0.8);
+            }
+        }
+
+        @media (min-width: 992px) {
+            &:hover {
+                background-color: rgba(#000, 0.1);
+            }
+        }
+
+        @media (max-width: $md2+px) {
+            &:hover {
+                background-color: transparent;
+            }
+        }
+    }
+
+    &__btn-prev {
+        left: 0;
+        @media (min-width: 1200px) {
+            left: -68px;
+
+        }
+    }
+
+    &__btn-next {
+        right: 0;
+        @media (min-width: 1200px) {
+            right: -68px;
+
+        }
+    }
+
+    &__thumb {
+        margin-bottom: 30px;
+        & .swiper-slide {
+            width: 159px;
+            height: 95px;
+    
+            @media (min-width: 992px) {
+                &:hover {
+                    &:before {
+                        width: 100%;
+                    }
+                }
+            }
+    
+            &:before {
+                position: absolute;
+                content: "";
+                left: 0;
+                bottom: 0;
+                width: 0%;
+                height: 6px;
+                transition: all 0.3s ease;
+                background-image: $gradient;
+                z-index: 2;
+            }
+
+            &.swiper-slide-thumb-active {
+                &:before {
+                    width: 100%;
+                }
+            }
+        }
+    
+        & .swiper-container {
+    
+        }
+    
+        & .swiper-wrapper {
+            margin-bottom: 20px;
+        }
+    
+        & .swiper-pagination {
+            position: static;
+        }
+    }
+}

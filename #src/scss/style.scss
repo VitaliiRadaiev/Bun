@@ -45,7 +45,7 @@
 // ==== BORDER ===========================================================================================
 
 // ==== POPUP ===========================================================================================
-//@import "common/popup/popup";
+@import "../common/popup/popup";
 // ==== // POPUP ===========================================================================================
 
 * {
@@ -591,6 +591,7 @@ button.btn-default {
 @import "../common/pagination/pagging";
 @import "../common/new-projects/new-projects";
 @import "../common/gallery-slider/gallery-slider";
+@import "../common/popup-gallery-slider/popup-gallery-slider";
 // ==== BLOCKS =====================================================
 
 // ==== PAGES =====================================================

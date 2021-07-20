@@ -1068,33 +1068,209 @@ if(priceSlider) {
                 el: slider.querySelector('.swiper-pagination'),
                 type: "fraction",
               },
-
-            /*
-            breakpoints: {
-                320: {
-                    slidesPerView: 1,
-                    spaceBetween: 0,
-                    autoHeight: true,
-                },
-                768: {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
-                },
-                992: {
-                    slidesPerView: 3,
-                    spaceBetween: 20,
-                },
-                1268: {
-                    slidesPerView: 4,
-                    spaceBetween: 30,
-                },
-            },
-            */
         });
     }
 };
-	//@@includ e('../common/popup/popup.js');
-	
+	// ==== Popup form handler====
+
+const popupLinks = document.querySelectorAll('.popup-link');
+const body = document.querySelector('body');
+const lockPadding = document.querySelectorAll('.lock-padding');
+
+let unlock = true;
+
+const timeout = 800;
+
+if(popupLinks.length > 0) {
+	for (let index = 0; index < popupLinks.length; index++) {
+		const popupLink = popupLinks[index];
+		popupLink.addEventListener('click', function(e) {
+			const popupName = popupLink.getAttribute('href').replace('#', '');
+			const curentPopup = document.getElementById(popupName);
+			popupOpen(curentPopup);
+			e.preventDefault();
+		});
+	}
+}
+
+
+const popupCloseIcon = document.querySelectorAll('.close-popup');
+if(popupCloseIcon.length > 0) {
+	for(let index = 0; index < popupCloseIcon.length; index++) {
+		const el = popupCloseIcon[index];
+		el.addEventListener('click', function(e) {
+			popupClose(el.closest('.popup'));
+			e.preventDefault();
+		});
+	}
+}
+
+function popupOpen(curentPopup) {
+	if(curentPopup && unlock) {
+		const popupActive = document.querySelector('.popup.open');
+		if (popupActive) {
+			popupClose(popupActive, false);
+		} else {
+			bodyLock();
+		}
+		curentPopup.classList.add('open');
+		curentPopup.addEventListener('click', function(e) {
+			if(!e.target.closest('.popup_content')) {
+				popupClose(e.target.closest('.popup'));
+			}
+		});
+
+	}
+}
+
+function popupClose(popupActive, doUnlock = true) {
+	if(unlock) {
+		popupActive.classList.remove('open');
+		if(doUnlock) {
+			bodyUnlock();
+		}
+	}
+}
+
+function bodyLock() {
+	const lockPaddingValue = window.innerWidth - document.querySelector('body').offsetWidth + 'px';
+	let targetPadding = document.querySelectorAll('._lp');
+	if(targetPadding.length) {
+		for (let index = 0; index < targetPadding.length; index++) {
+			const el = targetPadding[index];
+			el.style.paddingRight = lockPaddingValue;
+		}
+	}
+
+	if(lockPadding.length > 0) {
+		for (let index = 0; index < lockPadding.length; index++) {
+			const el = lockPadding[index];
+			el.style.paddingRight = lockPaddingValue;
+		}
+	}
+
+	body.style.paddingRight = lockPaddingValue;
+	body.classList.add('lock');
+
+	unlock = false;
+	setTimeout(function() {
+		unlock = true;
+	}, timeout);
+}
+
+function bodyUnlock() {
+	let targetPadding = document.querySelectorAll('._lp');
+
+	setTimeout(function() {
+		if(targetPadding.length) {
+			for (let index = 0; index < targetPadding.length; index++) {
+				const el = targetPadding[index];
+				el.style.paddingRight = '0px';
+			}
+		}
+
+		for( let index = 0; index < lockPadding.length; index++) {
+			const el = lockPadding[index];
+			el.style.paddingRight = '0px';
+		}
+
+		body.style.paddingRight = '0px';
+		body.classList.remove('lock');
+	}, timeout);
+
+	unlock = false;
+	setTimeout(function() { 
+		unlock = true;
+	}, timeout);
+}
+
+document.addEventListener('keydown', function(e) {
+	if(e.which === 27) {
+		const popupActive = document.querySelector('.popup.open');
+		popupClose(popupActive);
+	}
+});
+
+// === Polyfill ===
+	(function() {
+		if(!Element.prototype.closest) {
+			Element.prototype.closest = function(css) {
+				var node = this;
+				while(node) {
+					if(node.matches(css)) return node;
+					else node == node.parentElement;
+				}
+				return null;
+			};
+		}
+	})();
+
+	(function() {
+		if(!Element.prototype.matches) {
+			Element.prototype.matches = Element.prototype.matchesSelector ||
+				Element.prototype.webkitMatchesSelector ||
+				Element.prototype.mozMatchesSelector ||
+				Element.prototype.mozMatchesSelector;
+		}
+	})();
+// === AND Polyfill ===;
+	{
+    let popupGalleryMain = document.querySelector('.popup-gallery-slider__main');
+    let popupGalleryThumb = document.querySelector('.popup-gallery-slider__thumb');
+
+    let totalImages = document.querySelector('.head-gallery__total');
+    if(totalImages) {
+        let num = popupGalleryThumb.querySelector('.swiper-container .swiper-wrapper').children.length;
+        totalImages.innerText = num;
+    }
+
+    let dataThumb = new Swiper(popupGalleryThumb.querySelector('.swiper-container'), {
+        loop: true,
+        observer: true,
+        observeParents: true,
+        slidesPerView: 'auto',
+        spaceBetween: 18,
+        speed: 800,
+        freeMode: true,
+        watchSlidesVisibility: true,
+        watchSlidesProgress: true,
+    });
+    let dataMain = new Swiper(popupGalleryMain.querySelector('.swiper-container'), {
+        loop: true,
+        spaceBetween: 18,
+        observer: true,
+        observeParents: true,
+        slidesPerView: 1,
+        speed: 800,
+        preloadImages: false,
+        lazy: {
+            loadPrevNext: true,
+        },
+        navigation: {
+            nextEl: popupGalleryMain.querySelector('.popup-gallery-slider__btn-next'),
+            prevEl: popupGalleryMain.querySelector('.popup-gallery-slider__btn-prev'),
+        },
+        thumbs: {
+            swiper: dataThumb,
+        },
+        pagination: {
+            el: popupGalleryThumb.querySelector('.swiper-pagination'),
+            type: "fraction",
+        },
+    });
+
+    let openTriggersItems = document.querySelectorAll('[data-to-popup-slide]');
+    if(openTriggersItems.length) {
+        openTriggersItems.forEach(item => {
+            let id = item.dataset.toPopupSlide;
+            item.addEventListener('click', () => {
+                dataMain.slideTo(id);
+            })
+        })
+    }
+
+
+};
 });
 
 window.addEventListener('DOMContentLoaded', function() {
