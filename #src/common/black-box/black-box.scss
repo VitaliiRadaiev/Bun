@@ -22,6 +22,12 @@
         width: 191px;
     }
 
+    & > * {
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
     &.black-box_top-left {
         border-radius: 42px 2px 2px 2px;
     }

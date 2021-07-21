@@ -1,0 +1,42 @@
+.hero-v3 {
+    position: relative;
+    &:before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: calc(100% + 168px);
+        z-index: -1;
+        background-color: #000;
+    }
+    &__body {
+        color: #fff;
+        text-align: center;
+        padding-top: 37px;
+        padding-bottom: 61px;
+        position: relative;
+
+        & .breadcrumbs {
+            margin-bottom: 9px;
+        }
+
+        & .nav__link {
+            &:not(.active) {
+                color: $textColor;
+            }
+        }
+    }
+
+    &__title {
+        margin-bottom: 25px;
+    }
+
+    &__subtitle {
+        max-width: 831px;
+        font-size: 20px;
+        line-height: 30px;
+        font-weight: 700;
+        margin: 0 auto 32px;
+    }
+}

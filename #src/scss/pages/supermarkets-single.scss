@@ -1,0 +1,22 @@
+.supermarkets-single-page {
+    & .hero-v2 {
+        @media (min-width: 768px) {
+            margin-bottom: 98px;
+        }
+    }
+
+    & .article {
+        @media (min-width: 768px) {
+            margin-bottom: 105px;
+        }
+    }
+
+    & .article__body {
+        max-width: 912px;
+        margin: 0 auto;
+        & > * {
+            width: 100%;
+            max-width: none;
+        }
+    }
+}

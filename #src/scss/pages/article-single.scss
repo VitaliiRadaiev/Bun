@@ -91,6 +91,15 @@
     }
     &__img {
         padding-bottom: 59.4%;
+
+
+        @media (max-width: $md4+px) {
+            padding-bottom: 0;
+            min-height: 220px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
     }
 
     &__label {
@@ -105,9 +114,14 @@
         left: 0;
         bottom: 0;
         z-index: 3;
-        padding: 15px 20px 19px;
+        padding: 35px 20px 19px;
         color: #ffffff;
         width: 100%;
+
+        @media (max-width: $md4+px) {
+            position: relative;
+
+        }
     }
 
     &__title {

@@ -6,6 +6,28 @@
         margin-bottom: 50px;
     }
 
+    &.gallery-slider_two-rows {
+        margin-bottom: 0 !important;
+        
+
+        @media (min-width: 992px) {
+            & .swiper-container {
+                height: 100%;
+    
+            }
+    
+            & .swiper-wrapper {
+                height: 210px;
+            }
+            
+            & .swiper-slide {
+                display: block;
+                width: 100%;
+                height: calc(50% - 9px);
+            }
+        }
+    }
+
     & .swiper-slide {
         width: 159px;
         height: 95px;

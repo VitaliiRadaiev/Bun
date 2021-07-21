@@ -596,6 +596,19 @@ table {
 	width: 100%;
 	border-collapse: collapse;
 
+	& th {
+		font-weight: 700;
+		height: 60px;
+		font-size: 13px;
+		line-height: 18px;
+		color: rgba(#000, 0.5);
+		text-align: left;
+
+		&:not(:last-child) {
+			padding-right: 24px;
+		}
+	}
+
 	& td {
 		height: 60px;
 		font-size: 13px;
@@ -645,6 +658,7 @@ table {
 @import "../common/hero-v2/hero-v2";
 @import "../common/gallery/gallery";
 @import "../common/cta/cta";
+@import "../common/hero-v3/hero-v3";
 // ==== BLOCKS =====================================================
 
 // ==== PAGES =====================================================
@@ -653,5 +667,10 @@ table {
 @import "pages/property-overview";
 @import "pages/article-single";
 @import "pages/property-single";
+@import "pages/articles-overview";
+@import "pages/supermarkets-overview";
+@import "pages/supermarkets-single";
+@import "pages/project-development-overview";
+@import "pages/project-development-single";
 
 // ==== AND PAGES =====================================================

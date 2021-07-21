@@ -24,7 +24,157 @@
         }
     }
 
-    &:not(.products_listing) {
+    &.articles_listing {
+        @media (min-width: 768px) {
+            margin-bottom: 91px;
+        }
+
+        & > .container {
+            background-color: #fff;
+            padding-top: 30px;
+            border-radius: 2px;
+        }
+
+        & .products__head {
+            text-align: left;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin-bottom: 28px;
+        }
+
+        & .products__list {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -11.5px;
+            column-gap: 0;
+            row-gap: 0;
+
+            @media (min-width: 768px) {
+                margin-bottom: 71px;
+            }
+
+            & > li {
+                flex: 0 1 33.333%;
+                padding: 0 11.5px;
+                margin-bottom: 27px;
+
+                @media (max-width: $md2+px) {
+                    flex: 0 1 50%;
+                }
+                @media (max-width: $md3+px) {
+                    flex: 0 1 100%;
+                }
+
+                &.big {
+                    flex: 0 0 58.2%;
+
+                    @media (max-width: $md2+px) {
+                        flex: 0 0 100%;
+                    }
+
+                    & .news-card-v2 {
+                        position: relative;
+
+                        & .news-card-v2__head {
+                            @media (min-width: 768px) {
+                                padding: 15px 28px 36px;
+                                padding-right: 160px;
+                            }
+                        }
+
+                        & .news-card-v2__title {
+                            @media (min-width: 768px) {
+                                font-size: 25px;
+                                line-height: 38px;
+                                margin-bottom: 15px;
+                            }
+                        }
+
+                        & .news-card-v2__label {
+                            @media (min-width: 768px) {
+                                top: 32px;
+                                left: 28px;
+                            }
+                        }
+
+                        & .news-card-v2__subtitle {
+                            max-width: 400px;
+                        }
+
+                        & .news-card-v2__bottom {
+                            @media (min-width: 768px) {
+                                position: absolute;
+                                right: 29px;
+                                bottom: 13px;
+                                z-index: 3;
+
+                                & .link-icon-right {
+                                    color: #fff;
+                                }
+                            }
+                        }
+                    }
+
+                    @media (min-width: 768px) {
+                        & .card {
+                            position: relative;
+    
+                            & .card__text-wrap {
+                                position: absolute;
+                                left: 0;
+                                bottom: 10px;
+                                color: #fff;
+                                width: 100%;
+    
+                                & .link-icon-right {
+                                    color: #fff;
+                                }
+                            }
+                        }
+                    }
+
+
+                    & + li {
+                        @media (min-width: 992px) {
+                            flex: 0 1 41.8%;
+
+                            & .news-card-v2 {
+                                position: relative;
+
+                                & .news-card-v2__img {
+                                    padding-bottom: 72%;
+                                }
+
+                                & .news-card-v2__head {
+                                    padding: 15px 28px 36px;
+                                }
+
+                                & .news-card-v2__label {
+                                    top: 32px;
+                                    left: 28px;
+                                }
+                            }
+
+                            & .card {
+                                & .card__img {
+                                    padding-bottom: 66%;
+                                }
+                            }
+                        }
+
+                        @media (max-width: $md2+px) {
+                            & .news-card-v2__subtitle {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &:not(.products_listing):not(.articles_listing) {
         & .products__list {
             display: none;
 
@@ -52,25 +202,24 @@
     }
 
     &__list {
-
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         column-gap: 23px;
         row-gap: 25px;
         margin-bottom: 73px;
 
-        @media (max-width: $md3+px) {
+        @media (max-width: $md2+px) {
             grid-template-columns: repeat(2, 1fr);
             margin-bottom: 50px;
         }
 
-        @media (max-width: 575.98px) {
+        @media (max-width: $md3+px) {
             grid-template-columns: repeat(1, 1fr);
         }
 
         & > li {
             &.big {
-                @media (min-width: 768px) {
+                @media (min-width: 992px) {
                     grid-column: span 2;
 
                     & .card-product {
@@ -125,6 +274,14 @@
     }
     &__img {
         padding-bottom: 59.4%;
+
+        @media (max-width: $md4+px) {
+            padding-bottom: 0;
+            min-height: 220px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
     }
 
     &__label {
@@ -140,6 +297,10 @@
         z-index: 3;
         padding: 15px 20px 19px;
         color: #ffffff;
+
+        @media (max-width: $md4+px) {
+            position: relative;
+        }
     }
 
     &__title {
