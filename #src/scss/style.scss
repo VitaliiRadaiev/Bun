@@ -534,6 +534,11 @@ button.btn-default {
 			line-height: 30px;
 			margin-bottom: 1.7em;
 		}
+
+		&.medium-text {
+			font-size: 16px;
+			line-height: 25px;
+		}
 	}
 
 	& q {
@@ -563,6 +568,14 @@ button.btn-default {
 			height: 100%;
 			background: linear-gradient(180deg, #1bacd6 -7.84%, #3fc453 100%);
 		}
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-top: 0;
+		}
 	}
 
 	& ul {
@@ -589,6 +602,13 @@ button.btn-default {
 			min-height: 350px;
 			object-fit: cover;
 		}
+	}
+}
+
+.text-col-2 {
+	@media (min-width: 992px) {
+		column-count: 2;
+		column-gap: 60px;
 	}
 }
 
@@ -659,6 +679,7 @@ table {
 @import "../common/gallery/gallery";
 @import "../common/cta/cta";
 @import "../common/hero-v3/hero-v3";
+@import "../common/video-block/video-block";
 // ==== BLOCKS =====================================================
 
 // ==== PAGES =====================================================
@@ -672,5 +693,6 @@ table {
 @import "pages/supermarkets-single";
 @import "pages/project-development-overview";
 @import "pages/project-development-single";
+@import "pages/about";
 
 // ==== AND PAGES =====================================================

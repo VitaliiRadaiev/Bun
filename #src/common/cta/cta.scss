@@ -22,7 +22,7 @@
 
         @media (min-width: 768px) {
             flex: 1 1 auto;
-            max-width: 394px;
+            max-width: 500px;
             min-height: 520px;
             padding: 50px 30px 50px 0;
             display: flex;
@@ -51,7 +51,7 @@
 
     &__title {
         margin-bottom: 50px;
-
+        max-width: 476px;
         @media (max-width: $md3+px) {
             margin-bottom: 25px;
         }
@@ -67,6 +67,19 @@
     }
 
     &__text {
+        max-width: 450px;
+        margin-bottom: 51px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__btn-group {
+        & .btn-default {
+            margin-right: 22px;
+            margin-bottom: 10px;
+        }
     }
 
     &__form {
@@ -88,6 +101,15 @@
 
         @media (max-width: $md4+px) {
             padding: 30px 15px;
+        }
+    }
+
+    &__video-wrap {
+        margin-bottom: -76px;
+        width: 100%;
+        @media (min-width: 768px) {
+            max-width: 510px;
+
         }
     }
 }

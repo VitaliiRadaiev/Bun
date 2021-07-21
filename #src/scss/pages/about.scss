@@ -1,0 +1,36 @@
+.about-page {
+    & .text-block {
+        @media (min-width: 768px) {
+            margin-bottom: 65px;
+        }
+    }
+
+    & .article__body { 
+        max-width: 1060px;
+        margin: 0 auto;
+
+        & > * {
+            max-width: none;
+        }
+
+        &.text-content {
+            & > h3:first-child {
+                text-align: center;
+                
+                @media (min-width: 992px) {
+                    margin-bottom: 83px;
+                }
+            }
+
+            & q {
+                margin-bottom: 1.5em;
+            }
+        }
+    }
+
+    & .cta__col-1 {
+        &:before {
+            left: 68%;
+        }
+    }
+}

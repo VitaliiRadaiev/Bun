@@ -2,8 +2,47 @@
     position: relative;
     margin-bottom: 130px;
 
-    @media (max-width: $md3+px) {
-        margin-bottom: 100px;
+    &.hero_center {
+        margin-bottom: 155px;
+        @media (max-width: $md3+px) {
+            margin-bottom: 130px;
+        }
+        & .hero__body {
+            text-align: center;
+        }
+        
+        & .hero__box-info {
+            text-align: left;
+            max-width: 908px;
+            margin-left: auto;
+            margin-right: auto;
+            
+            @media (min-width: 768px) {
+                &.black-box {
+                    min-height: 240px;
+                    padding: 30px 108px 30px 100px;
+                }
+    
+            }
+
+            & .hero__title  {
+                margin-bottom: 60px;
+                @media (max-width: $md3+px) {
+                    margin-bottom: 25px;
+                }
+            }
+
+            & .black-box__flex {
+                justify-content: space-between;
+            }
+
+            & .black-box__col-1 {
+                max-width: 461px;
+            }
+            & .black-box__col-2 {
+                max-width: 249px;
+            }
+        }
     }
 
     &__img {

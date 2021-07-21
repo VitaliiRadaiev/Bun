@@ -118,5 +118,9 @@
                 margin-right: 24px;
             }
         }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
 }

@@ -33,6 +33,7 @@ window.addEventListener('load', function () {
 	@@include('../common/popup/popup.js');
 	@@include('../common/popup-gallery-slider/popup-gallery-slider.js');
 	@@include('../common/products/products.js');
+	@@include('../common/video-block/video-block.js');
 
 
 
