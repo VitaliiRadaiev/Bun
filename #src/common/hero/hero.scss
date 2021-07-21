@@ -10,6 +10,13 @@
         & .hero__body {
             text-align: center;
         }
+
+        & .hero__title  {
+            margin-bottom: 60px;
+            @media (max-width: $md3+px) {
+                margin-bottom: 25px;
+            }
+        }
         
         & .hero__box-info {
             text-align: left;
@@ -23,13 +30,6 @@
                     padding: 30px 108px 30px 100px;
                 }
     
-            }
-
-            & .hero__title  {
-                margin-bottom: 60px;
-                @media (max-width: $md3+px) {
-                    margin-bottom: 25px;
-                }
             }
 
             & .black-box__flex {

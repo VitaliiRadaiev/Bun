@@ -3537,15 +3537,15 @@ table td img[data-tooltip-text] {
   text-align: center;
 }
 
+.hero.hero_center .hero__title {
+  margin-bottom: 60px;
+}
+
 .hero.hero_center .hero__box-info {
   text-align: left;
   max-width: 908px;
   margin-left: auto;
   margin-right: auto;
-}
-
-.hero.hero_center .hero__box-info .hero__title {
-  margin-bottom: 60px;
 }
 
 .hero.hero_center .hero__box-info .black-box__flex {
@@ -6341,7 +6341,7 @@ table td img[data-tooltip-text] {
     margin-bottom: 130px;
   }
 
-  .hero.hero_center .hero__box-info .hero__title {
+  .hero.hero_center .hero__title {
     margin-bottom: 25px;
   }
 
