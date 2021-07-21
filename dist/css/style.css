@@ -4150,7 +4150,6 @@ table td img[data-tooltip-text] {
 
 .cta__video-wrap {
   margin-bottom: -76px;
-  width: 100%;
 }
 
 .form__title {
@@ -5328,7 +5327,7 @@ table td img[data-tooltip-text] {
   }
 
   .cta__video-wrap {
-    max-width: 510px;
+    max-width: 617px;
   }
 
   .info-bun__body .black-box .black-box__big-text {
@@ -5911,6 +5910,10 @@ table td img[data-tooltip-text] {
 
   .footer__bottom-body {
     padding-right: 116px;
+  }
+
+  .cta__video-wrap {
+    width: calc(100% + 120px);
   }
 
   .news-updates-b__col-1 {

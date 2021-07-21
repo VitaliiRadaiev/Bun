@@ -106,9 +106,13 @@
 
     &__video-wrap {
         margin-bottom: -76px;
-        width: 100%;
+        
+
+        @media (min-width: 1268px) {
+            width: calc(100% + 120px);
+        }
         @media (min-width: 768px) {
-            max-width: 510px;
+            max-width: 617px;
 
         }
     }
