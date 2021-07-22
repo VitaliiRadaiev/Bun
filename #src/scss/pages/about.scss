@@ -5,6 +5,12 @@
         }
     }
 
+    & .article {
+        @media (min-width: 768px) {
+            margin-bottom: 142px;
+        }
+    }
+
     & .article__body { 
         max-width: 1060px;
         margin: 0 auto;
