@@ -35,6 +35,7 @@ window.addEventListener('load', function () {
 	@@include('../common/products/products.js');
 	@@include('../common/video-block/video-block.js');
 	@@include('../common/history/history.js');
+	@@include('../common/gallery/gallery.js');
 
 
 
