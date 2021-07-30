@@ -1455,7 +1455,6 @@ VideoHandler();;
                 let headHeight = currentPopup.querySelector('.popup-gallery__top').clientHeight + 15;
                 popupOpen(currentPopup);
 
-                console.dir(headHeight);
                 currentPopup.scrollTo({
                     top: topHeight - headHeight,
                     behavior: 'smooth',
