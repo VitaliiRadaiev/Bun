@@ -36,10 +36,19 @@
 		height: 100%;
 		width: 100%;
 		background-color: #c4c4c4;
+		max-width: 1500px;
+		margin: auto;
+		
+		@media (min-width: 768px) {
+			max-height: 80%;
+
+		}
 	}
 }
 .popup-map {
-
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	& .head-gallery__close {
 		position: absolute;
 		top: 15px;

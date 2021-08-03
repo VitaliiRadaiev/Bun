@@ -1535,6 +1535,20 @@ button.swiper-pagination-bullet {
   height: 100%;
   width: 100%;
   background-color: #c4c4c4;
+  max-width: 1500px;
+  margin: auto;
+}
+
+.popup-map {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .popup-map .head-gallery__close {
@@ -5289,6 +5303,10 @@ table td img[data-tooltip-text] {
 }
 
 @media (min-width: 768px) {
+  .popup__map {
+    max-height: 80%;
+  }
+
   .footer:after {
     position: absolute;
     content: "";
