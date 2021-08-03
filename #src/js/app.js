@@ -36,8 +36,7 @@ window.addEventListener('load', function () {
 	@@include('../common/video-block/video-block.js');
 	@@include('../common/history/history.js');
 	@@include('../common/gallery/gallery.js');
-
-
+	
 
 	let tooltipItems = document.querySelectorAll('[data-tooltip-text]');
 	if(tooltipItems.length) {
@@ -49,6 +48,10 @@ window.addEventListener('load', function () {
 	}
 
 });
+
+@@include('blocks/map.js');
+
+
 
 window.addEventListener('DOMContentLoaded', function() {
 	if(isMobile.any()) {

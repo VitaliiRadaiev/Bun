@@ -42,6 +42,8 @@ function popupOpen(curentPopup) {
 		}
 		curentPopup.classList.add('open');
 		curentPopup.addEventListener('click', function(e) {
+			if(e.target.closest('#popupMap')) return;
+
 			if(!e.target.closest('.popup_content')) {
 				popupClose(e.target.closest('.popup'));
 			}

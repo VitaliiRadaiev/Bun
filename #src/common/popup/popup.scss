@@ -31,8 +31,34 @@
 		min-height: 100%;
 		flex: 1 1 auto;
 	}
-}
 
+	&__map {
+		height: 100%;
+		width: 100%;
+		background-color: #c4c4c4;
+	}
+}
+.popup-map {
+
+	& .head-gallery__close {
+		position: absolute;
+		top: 15px;
+		right: 15px;
+		z-index: 2;
+		background-color: rgba(#000, 0.2);
+
+		@media (min-width: 992px) {
+			&:hover {
+				background-color: rgba(#000, 0.3);
+			}
+		}
+
+		& > span {
+			height: 25px;
+			width: 25px;
+		}
+	}
+}
 .popup-gallery {
 	padding-top: 150px;
 	display: flex;
