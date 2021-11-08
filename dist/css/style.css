@@ -1971,6 +1971,14 @@ textarea {
   padding: 0 40px;
 }
 
+.text-center {
+  text-align: center;
+}
+
+.pt-5 {
+  padding-top: 50px;
+}
+
 .ibg {
   position: relative;
 }
@@ -6808,6 +6816,10 @@ table td img[data-tooltip-text] {
 }
 
 @media (max-width: 575.98px) {
+  .pt-xs-3 {
+    padding-top: 30px;
+  }
+
   .categories__list > li {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 100%;

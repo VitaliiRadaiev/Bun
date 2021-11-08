@@ -226,6 +226,20 @@ textarea {
 	}
 }
 
+.text-center {
+	text-align: center;
+}
+
+.pt-5 {
+	padding-top: 50px;
+}
+
+.pt-xs-3 {
+	@media (max-width: 575.98px) {
+		padding-top: 30px;
+	}
+}
+
 .ibg {
 	position: relative;
 	img {
