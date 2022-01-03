@@ -1,31 +1,32 @@
 .nav {
     display: inline-flex;
-    min-height: 40px;
     box-shadow: 0 7px 64px rgba(0, 0, 0, 0.07);
-    border-radius: 99px;
+    border-radius: 10px;
     background-color: #ffffff;
-    padding: 5px 9px;
     overflow: auto;
     max-width: 100%;
 
     & > li {
-        &:not(:last-child) {
-            margin-right: 4px;
-        }
+
     }
 
     &__link {
         display: inline-flex;
-        min-height: 30px;
+        min-height: 48px;
         align-items: center;
         justify-content: center;
-        border-radius: 99px;
-        padding: 5px 21px;
+        padding: 9px 30px;
         transition: all 0.3s ease;
-        font-size: 12px;
+        font-size: 10px;
         letter-spacing: 0.2px;
         line-height: 18px;
-        color: rgba($textColor, 0.5);
+        text-transform: uppercase;
+        font-weight: 700;
+        color: #000;
+
+        @media (max-width: $md3+px) {
+            padding: 9px 21px;
+        }
         
         @media (min-width: 992px) {
             &:hover {
@@ -38,7 +39,6 @@
         &.active {
             background-color: $mainColor;
             color: #fff;
-            font-weight: 700;
         }
     }
 }

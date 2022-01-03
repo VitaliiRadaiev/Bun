@@ -5,7 +5,7 @@
             observer: true,
             observeParents: true,
             slidesPerView: 'auto',
-            spaceBetween: 24,
+            spaceBetween: 0,
             speed: 800,
             pagination: {
             	el: slider.querySelector('.swiper-pagination'),

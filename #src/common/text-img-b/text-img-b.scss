@@ -7,9 +7,15 @@
 
     &.text-img-b_revers {
 
-        @media (min-width: 768px) {
+        @media (min-width: 992px) {
             & .text-img-b__body {
                 flex-direction: row-reverse;
+            }
+
+            & .text-img-b__img  {
+                left:  auto;
+                right: 0;
+                border-radius: 0 42px 0 0;
             }
     
             & .text-img-b__col-1 {
@@ -61,8 +67,9 @@
     &__col-2 {
         flex: 0 0 48.96%;
         position: relative;
-
-        @media (min-width: 768px) {
+        min-height: 380px;
+        @media (min-width: 992px) {
+            min-height: 580px;
             margin-left: 107px;
         }
 
@@ -97,7 +104,7 @@
     }
 
     &__title {
-        margin-bottom: 57px;
+        margin-bottom: 23px;
 
         @media (max-width: $md3+px) {
             margin-bottom: 20px;
@@ -105,11 +112,8 @@
     }
 
     &__subtitle {
-        font-family: $berninoSansNarrow;
-        font-size: 15px;
-        letter-spacing: 0.67px;
+        font-size: 17px;
         line-height: 28px;
-        text-transform: uppercase;
         margin-bottom: 19px;
     }
 
@@ -124,10 +128,16 @@
     }
 
     &__img {
-        min-height: 480px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
 
-        @media (max-width: $md3+px) {
-            min-height: 380px;
+        @media (min-width: 992px) {
+            width: 50vw;
+            border-radius: 42px 0 0 0;
+            overflow: hidden;
         }
     }
 }

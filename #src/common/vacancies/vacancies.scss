@@ -1,17 +1,36 @@
 .vacancies {
-    margin-bottom: 164px;
-
+    padding-top: 97px;
+    padding-bottom: 62.5px;
+    position: relative;
     @media (max-width: $md3+px) {
-        margin-bottom: 50px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    &__decor {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+
+        & img {
+            width: 100%;
+            display: block;
+            height: auto;
+            transform: translateY(-50%);
+        }
     }
 
     &__body {
         max-width: 1125px;
+        position: relative;
+        z-index: 2;
     }
 
     &__title {
-        text-align: center;
-        margin-bottom: 33px;
+        margin-bottom: 27px;
 
         @media (max-width: $md3+px) {
             margin-bottom: 20px;
@@ -29,6 +48,7 @@
             }
         }
     }
+
 }
 
 .vacancy-card {
@@ -37,6 +57,8 @@
     overflow: hidden;
     transition: all 0.3s ease;
     color: $textColor;
+    box-shadow: 0 11px 55px 10px rgba(0, 0, 0, 0.07), 0 13px 18px -8px rgba(0, 0, 0, 0.15);
+    background-color: #ffffff;
 
     @media (min-width: 992px) {
         &:hover {
@@ -76,10 +98,17 @@
 
     &__title {
         margin-bottom: 8px;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.2em;
+        text-transform: uppercase;
     }
 
     &__text {
-        font-size: 14px;
+        font-size: 12px;
+        font-weight: 400;
+        font-style: normal;
+        letter-spacing: -0.3px;
         line-height: 18px;
         margin-bottom: 8px;
     }
@@ -107,6 +136,11 @@
         margin: 5px 0;
         margin-right: 25px;
 
+        font-size: 11px;
+        font-weight: 400;
+        font-style: normal;
+        letter-spacing: -0.3px;
+        line-height: 18px;
 
         & img {
             max-height: 14px;

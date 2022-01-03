@@ -1,46 +1,59 @@
 .footer {
-    background-color: #000;
+    background-color: #24272a;
     color: #fff;
-    padding-top: 120px;
     position: relative;
-
-    @media (max-width: $md3+px) {
-        padding-top: 53px;
-    }
-
-
-    @media (min-width: 768px) {
-        &:after {
-            position: absolute;
-            content: "";
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 11px;
-            background-image: $gradient;
-        }
-    }
 
     &__body {
 
-        @media (min-width: 768px) {
+        @media (min-width: 992px) {
             display: flex;
-            margin-bottom: 37px;
-    
+        }
+
+        @media (max-width: $md2+px) {
+            padding-top: 60px;
         }
     }
 
     &__col-1 {
-        margin-bottom: 65px;
-        @media (min-width: 768px) {
-            flex: 0 0 43.65%;
+        @media (min-width: 992px) {
+            padding-top: 126px;
+            padding-bottom: 50px;
+            min-height: 480px;
+            flex: 0 1 50%;
             padding-right: 20px;
             margin-bottom: 0;
+            border-right: 1px solid #fff;
+        }
+
+        @media (max-width: $md2+px) {
+            margin-bottom: 50px;
+        }
+        @media (max-width: $md3+px) {
+            margin-bottom: 30px;
         }
     }
 
     &__col-2 {
-        flex: 1 1 auto;
+
+        @media (min-width: 992px) {
+            min-height: 480px;
+            flex: 0 1 50%;
+            padding-top: 91px;
+            padding-left: 125px;
+            padding-bottom: 50px;
+        }
+
+        @media (max-width: $md1+px) {
+            padding-left: 50px;
+        }
+        
+        @media (max-width: $md2+px) {
+            padding-left: 0;
+        }
+
+        @media (max-width: $md3+px) {
+            margin-bottom: 30px;
+        }
     }
 
     &__logo {
@@ -95,7 +108,7 @@
             width: 100%;
             
             & > li {
-                flex: 0 1 33.3333%;
+                flex: 0 1 50%;
                 padding-right: 20px;
                 margin-bottom: 47px;
             }
@@ -116,11 +129,12 @@
 
     &__nav-title {
         color: #ffffff;
-        font-size: 13px;
-        font-weight: 700;
+        font-size: 16px;
+        font-weight: 600;
         line-height: 21px;
         transition: all 0.3s ease;
         display: inline-block;
+        text-transform: uppercase;
 
         @media (min-width: 768px) {
             margin-bottom: 19px;
@@ -180,22 +194,21 @@
     }
 
     &__nav-link {
-        color: rgba(#fff, 0.6);
+        color: #fff;
         font-size: 13px;
         line-height: 1.4em;
         transition: all 0.3s ease;
 
         @media (min-width: 992px) {
             &:hover {
-                color: #fff;
+                text-decoration: underline;
             }
         }
     }
 
     &__bottom {
         @media (min-width: 768px) {
-            border-top: 1px solid rgba(#fff, 0.2);
-
+            border-top: 1px solid #fff;
         }
     }
 

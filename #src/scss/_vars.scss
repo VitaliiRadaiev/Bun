@@ -1,16 +1,17 @@
 
 
 //<ШРИФТЫ>===========================================================================================================
-$berninoSansCondensed: "jaf-bernino-sans-condensed",sans-serif; //400,700
-$berninaSans:  "jaf-bernina-sans",sans-serif; //400,600,700,800
-$berninaSansComp :  "jaf-bernina-sans-comp",sans-serif; //400, 700
-$berninaSansCondensed :  "jaf-bernina-sans-condensed",sans-serif; //400, 700
-$berninaSansNarrow :  "jaf-bernina-sans-narrow",sans-serif; //400, 700
-$berninoSans:  "jaf-bernino-sans",sans-serif; //400, 700
-$berninoSansComp  : "jaf-bernino-sans-comp",sans-serif; //400, 700
-$berninoSansNarrow  : "jaf-bernino-sans-narrow",sans-serif; //400, 700
+$berninoSansCondensed: "termina", sans-serif;
+$berninaSans: "termina", sans-serif;
+$berninaSansComp: "termina", sans-serif;
+$berninaSansCondensed: "termina", sans-serif;
+$berninaSansNarrow: "termina", sans-serif;
+$berninoSans: "termina", sans-serif;
+$berninoSansComp:"termina", sans-serif;
+$berninoSansNarrow:"termina", sans-serif;
 
-$mainFontFamily:  $berninaSans;
+$mainFontFamily:  "termina", sans-serif;
+$titleFontFamily: "Anton", sans-serif;
 //</ШРИФТЫ>===========================================================================================================
 
 //<РАЗМЕРЫ КОНТЕЙНЕРА>===========================================================================================================
