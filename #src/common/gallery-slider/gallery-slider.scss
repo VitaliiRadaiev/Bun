@@ -8,7 +8,10 @@
 
     &.gallery-slider_two-rows {
         margin-bottom: 0 !important;
-        
+       
+        & .swiper-container {
+            border-radius: 40px 0 0 0;
+        }
 
         @media (min-width: 992px) {
             & .swiper-container {
@@ -17,7 +20,7 @@
             }
     
             & .swiper-wrapper {
-                height: 210px;
+                height: 505px;
             }
             
             & .swiper-slide {

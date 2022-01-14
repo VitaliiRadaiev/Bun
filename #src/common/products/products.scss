@@ -104,21 +104,21 @@
                     flex: 0 0 58.2%;
 
                     @media (max-width: $md2+px) {
-                        flex: 0 0 100%;
+                        flex: 0 0 50%;
                     }
 
                     & .news-card-v2 {
                         position: relative;
 
                         & .news-card-v2__head {
-                            @media (min-width: 768px) {
+                            @media (min-width: 992px) {
                                 padding: 15px 28px 36px;
                                 padding-right: 160px;
                             }
                         }
 
                         & .news-card-v2__title {
-                            @media (min-width: 768px) {
+                            @media (min-width: 992px) {
                                 font-size: 25px;
                                 line-height: 38px;
                                 margin-bottom: 15px;
@@ -126,7 +126,7 @@
                         }
 
                         & .news-card-v2__label {
-                            @media (min-width: 768px) {
+                            @media (min-width: 992px) {
                                 top: 32px;
                                 left: 28px;
                             }
@@ -137,7 +137,7 @@
                         }
 
                         & .news-card-v2__bottom {
-                            @media (min-width: 768px) {
+                            @media (min-width: 992px) {
                                 position: absolute;
                                 right: 29px;
                                 bottom: 13px;
@@ -150,23 +150,27 @@
                         }
                     }
 
-                    @media (min-width: 768px) {
+                    @media (min-width: 992px) {
                         & .card {
                             position: relative;
-    
-                            & .card__text-wrap {
+                            & .card__bottom {
                                 position: absolute;
-                                left: 0;
-                                bottom: 10px;
-                                color: #fff;
-                                width: 100%;
+                                right: 0;
+                                bottom: 0;
+                                background-color: transparent;
+                                z-index: 4;
+                            }
     
-                                & .link-icon-right {
-                                    color: #fff;
-                                }
+                            & .card__head {
+                                padding-bottom: 59.7%;
+                            }
+
+                            & .link-icon-right {
+                                color: #fff;
                             }
                         }
                     }
+
 
 
                     & + li {
@@ -191,9 +195,14 @@
                             }
 
                             & .card {
-                                & .card__img {
-                                    padding-bottom: 66%;
-                                }
+                              & .card__head {
+                                  padding-bottom: 0;
+                                  flex: 1 1 auto;
+                              }
+
+                              & .card__text-wrap {
+                                  text-align: left;
+                              }
                             }
                         }
 
@@ -286,7 +295,7 @@
                         }
                     }
                     &:nth-child(3n+3) {
-                        & .card-product__head & .card__text-wrap {
+                        & .card-product__head &, .card__text-wrap {
                             text-align: right;
                         }
                     }

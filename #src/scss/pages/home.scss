@@ -1,5 +1,10 @@
 .promo-header {
     position: relative;
+    &.bg-grey {
+        & .promo-header__body {
+            padding-bottom: 0;
+        }
+    }
 
     &__bg {
         position: absolute;
@@ -7,7 +12,7 @@
         left: 0;
         width: 100%;
         height: 445px;
-        z-index: -1;
+        z-index: 1;
 
         @media (max-width: $md2+px) {
             height: 344px;
@@ -28,6 +33,7 @@
         padding-bottom: 71px;
         color: #fff;
         position: relative;
+        z-index: 2;
 
         @media (max-width: $md2+px) {
             padding-top: 240px;
@@ -106,6 +112,62 @@
         margin-right: 30px;
         margin-bottom: 20px;
         min-height: 45px;
+    }
+
+    &__bottom {
+        padding-top: 39px;
+        padding-bottom: 50px;
+
+        @media (min-width: 768px) {
+            display: flex;
+        }
+    }
+
+    &__bottom-col-1 {
+        flex: 1 1 auto;
+
+        @media (min-width: 768px) {
+            margin-right: 50px;
+        }
+    }
+
+    &__bottom-col-2 {
+        flex: 0 0 35%;
+    }
+
+    &__bottom-text {
+        max-width: 537px;
+        font-size: 15px;
+        line-height: 25px;
+
+        &.text-content {
+            & p {
+                &.big-text {
+                    font-size: 17px;
+                    line-height: 28px;
+                }
+            }
+        }
+    }
+
+    & .black-box__list {
+        position: relative;
+        padding-top: 30px;
+        padding-left: 30px;
+        padding-bottom: 30px;
+        &:before {
+			position: absolute;
+			content: "";
+			top: 0;
+			left: 0;
+			display: block;
+			width: 100%;
+			height: 100%;
+			background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgzIiBoZWlnaHQ9IjI3MSIgdmlld0JveD0iMCAwIDE4MyAyNzEiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0wLjUgMjcwLjVMMC41IDM0LjVDMC41IDE1LjcyMjMgMTUuNzIyMyAwLjUgMzQuNSAwLjVIMTgyLjUiIHN0cm9rZT0idXJsKCNwYWludDBfbGluZWFyXzBfNDg5KSIgc3Ryb2tlLWxpbmVjYXA9InNxdWFyZSIvPgo8ZGVmcz4KPGxpbmVhckdyYWRpZW50IGlkPSJwYWludDBfbGluZWFyXzBfNDg5IiB4MT0iLTEzLjc3MDgiIHkxPSIyODEuMDg1IiB4Mj0iMTgyLjUiIHkyPSIyODEuMDg1IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CjxzdG9wIHN0b3AtY29sb3I9IiMxQkFDRDYiLz4KPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjM0ZDNDUzIi8+CjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPC9zdmc+Cg==);
+			background-position: 0 0;
+			background-repeat: no-repeat;
+			background-size: auto 100%;
+		}
     }
 }
 
@@ -442,6 +504,7 @@
 
 .vacancies-cta {
     padding-top: 62.5px;
+    padding-bottom: 1px;
     @media (max-width: $md3+px) {
         padding-top: 50px;
     }

@@ -119,6 +119,19 @@
         @media (max-width: $md3+px) {
             flex: 0 1 100%;
         }
+
+        @media (min-width: 992px) {
+            &:nth-child(3n+2) {
+                & .card-product__head, & .card__text-wrap {
+                    text-align: center;
+                }
+            }
+            &:nth-child(3n+3) {
+                & .card-product__head, & .card__text-wrap {
+                    text-align: right;
+                }
+            }
+        }
     }
 }
 

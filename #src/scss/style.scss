@@ -714,16 +714,18 @@ table {
 	border-collapse: collapse;
 
 	& th {
-		font-weight: 700;
+		font-weight: 500;
 		height: 60px;
-		font-size: 13px;
+		font-size: 15px;
 		line-height: 18px;
-		color: rgba(#000, 0.5);
+		color: rgba(#000, 0.9);
 		text-align: left;
+		text-transform: uppercase;
 
 		&:not(:last-child) {
 			padding-right: 24px;
 		}
+
 	}
 
 	& td {
@@ -732,6 +734,7 @@ table {
 		line-height: 18px;
 		color: rgba(#000, 0.5);
 		text-transform: uppercase;
+
 
 		@media (max-width: $md4+px) {
 			font-size: 12px;
@@ -750,7 +753,6 @@ table {
 		& a {
 			color: #1bacd6;
 			text-decoration: underline;
-			font-weight: 700;
 		}
 
 		& img[data-tooltip-text] {
