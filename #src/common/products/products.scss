@@ -1,8 +1,8 @@
 .products {
     margin-bottom: 180px;
-    padding-top: 106px;
+    padding-top: 36px;
     @media (max-width: $md3+px) {
-        padding-top: 50px;
+        padding-top: 0px;
         margin-bottom: 50px;
     }
 
@@ -65,7 +65,7 @@
 
         & > .container {
             background-color: #fff;
-            padding-top: 30px;
+            padding-top: 40px;
             border-radius: 2px;
         }
 
@@ -281,12 +281,12 @@
             &:not(.big) {
                 @media (min-width: 992px) {
                     &:nth-child(3n+2) {
-                        & .card-product__head {
+                        & .card-product__head, & .card__text-wrap {
                             text-align: center;
                         }
                     }
                     &:nth-child(3n+3) {
-                        & .card-product__head {
+                        & .card-product__head & .card__text-wrap {
                             text-align: right;
                         }
                     }

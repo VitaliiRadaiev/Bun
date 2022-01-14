@@ -1,14 +1,29 @@
 .cta {
-    background-color: #000;
+    background: linear-gradient(0deg, #24272a, #24272a);
     margin-bottom: 160px;
+    padding-top: 124px;
+    padding-bottom: 90px;
 
     @media (max-width: $md3+px) {
-        margin-bottom: 130px;
+        margin-bottom: 60px;
+        padding-top: 60px;
+        padding-bottom: 60px;
     }
+
+    & .container {
+        max-width: 1120px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    & .btn-default {
+        margin-left: auto;
+    }
+
     &__body {
-
-        max-width: 1125px;
-
+        color: #fff;
+        max-width: 1040px;
+        margin: 0 auto 20px;
         @media (min-width: 768px) {
             display: flex;
             justify-content: space-between;
@@ -16,44 +31,35 @@
     }
 
     &__col-1 {
-        color: #fff;
-        padding: 50px 0 30px;
-        position: relative;
-
+        flex: 1 1 auto;
+  
         @media (min-width: 768px) {
-            flex: 1 1 auto;
-            max-width: 500px;
-            min-height: 520px;
-            padding: 50px 30px 50px 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            margin-right: 28px;
 
-            &:before {
-                position: absolute;
-                content: '';
-                left: 0;
-                bottom: 0;
-                width: 200px;
-                height: 12px;
-                background-image: $gradient;
-                transform: translateY(100%);
-            }
         }
     }
 
     &__col-2 {
-        flex: 0 0 49.16%;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
+        flex: 0 0 42.3%;
     }
 
     &__title {
         margin-bottom: 50px;
-        max-width: 476px;
+        &.title-4 {
+            color: #fff;
+            text-align: center;
+            font-size: 32px;
+            line-height: 1.375em;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
         @media (max-width: $md3+px) {
             margin-bottom: 25px;
+
+            &.title-4 {
+                font-size: 22px;
+            }
         }
     }
 
@@ -67,8 +73,24 @@
     }
 
     &__text {
-        max-width: 450px;
-        margin-bottom: 51px;
+        background: rgba(#fff, 0.05);
+        mix-blend-mode: normal;
+        border-radius: 0px 40px 0px 0px;
+        height: 100%;
+        padding: 30px;
+
+        @media (max-width: $md3+px) {
+            padding: 20px;
+        }
+
+        &.text-content {
+            font-size: 17px;
+            line-height: 1.41em;
+
+            @media (max-width: $md3+px) {
+                font-size: 14px;
+            }
+        }
 
         &:last-child {
             margin-bottom: 0;
@@ -89,10 +111,9 @@
         margin-bottom: -76px;
         padding: 60px 106px 60px 69px;
         width: 100%;
-        
+
         @media (min-width: 768px) {
             max-width: 510px;
-
         }
 
         @media (max-width: $md2+px) {
@@ -106,13 +127,49 @@
 
     &__video-wrap {
         margin-bottom: -76px;
-        
 
         @media (min-width: 1268px) {
             width: calc(100% + 120px);
         }
         @media (min-width: 768px) {
             max-width: 617px;
+        }
+    }
+
+    & .form__group {
+        @media (min-width: 768px) {
+            margin-bottom: 0;
+        }
+    }
+
+    & .form__item {
+            margin-bottom: 20px;
+        
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        & .input {
+            height: 90px;
+            border-radius: 2px;
+            background-color: rgba(#fff, 0.05);
+            font-size: 17px;
+            color: #fff;
+            border: none;
+            padding-left: 30px;
+            padding-right: 30px;
+
+            &::placeholder {
+                font-size: 17px;
+                color: #fff;
+            }
+
+            @media (max-width: $md3+px) {
+                height: 60px;
+                font-size: 14px;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
 
         }
     }
@@ -136,10 +193,8 @@
     }
 
     &__item-half {
-        
         @media (min-width: 480px) {
             flex: 0 1 calc(50% - 10px);
-
         }
     }
 }

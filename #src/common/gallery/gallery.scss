@@ -18,6 +18,38 @@
                 flex: 0 1 50%;
             }
 
+            & .gallery__item {
+                border-radius: 2px;
+                overflow: hidden;
+            }
+
+            &:first-child {
+                & .gallery__item {
+                    border-radius: 40px 2px 2px 2px;
+                }
+            }
+
+            &:last-child {
+                & .gallery__item {
+                    position: relative;
+
+                    &:before {
+                        position: absolute;
+                        content: '';
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        z-index: 3;
+                        width: 37%;
+                        height: 100%;
+                        background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQ5IiBoZWlnaHQ9IjE0OSIgdmlld0JveD0iMCAwIDE0OSAxNDkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIG9wYWNpdHk9IjAuMzA2NTQ4IiBkPSJNMTM5LjI0NSA2Ny4wMzRMODEuNTU3MSA2Ny4wNDczTDgxLjU3MDQgOS4zNTk0MUw4MS4yMTUgOC4xODkzNkM3OC45MzU5IDAuNjg1MDA2IDY4LjAzNTQgMS41ODYwNCA2Ny4wMTk0IDkuMzYyNzZMNjcuMDA2MSA2Ny4wNTA3TDkuMzE4MTcgNjcuMDY0QzEuNDU4OTQgNjguMzEzNiAwLjkxNTM0NSA3OS40MjExIDguNjE1IDgxLjQzMjJMOS4zMTQ4MiA4MS42MTVMNjcuMDAyNyA4MS42MDE3TDY2Ljk4OTQgMTM5LjI5TDY3LjEzMDEgMTM5Ljg0NkM2OS4wODI5IDE0Ny41NjUgODAuMTkxOCAxNDcuMTMzIDgxLjU0MDQgMTM5LjI4Nkw4MS41NTM3IDgxLjU5ODNMMTM5LjI0MiA4MS41ODVDMTQ3LjA5NSA4MC4yMTQ5IDE0Ny40OTMgNjkuMDg4MiAxMzkuNzU3IDY3LjE2MTVMMTM5LjI0NSA2Ny4wMzRaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K");
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                    }
+                }
+            }
+
             &:nth-child(5n+1) {
                 flex: 0 1 50%;
                 

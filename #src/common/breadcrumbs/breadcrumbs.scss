@@ -3,10 +3,11 @@
     flex-wrap: wrap;
 
     & > li {
-        font-weight: bold;
+        font-weight: 600;
         font-size: 12px;
         line-height: 18px;
         color: #ffffff;
+        text-transform: uppercase;
 
         &:not(:last-child) {
             &:after {

@@ -1,12 +1,29 @@
+.property-single-page {
+    & .hero {
+        background: #EEEEEE;
+    }
+}
+
 .characteristics {
+    background: #EEEEEE;
     margin-bottom: 168px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+
+    @media (max-width: $md1+px) {
+        padding-top: 30px;
+    }
+
     @media (max-width: $md3+px) {
+        padding-top: 10px;
         margin-bottom: 50px;
+        padding-bottom: 50px;
     }
 
     &__body {
 
-        @media (min-width: 768px) {
+        @media (min-width: 992px) {
             display: flex;
             justify-content: space-between;
     
@@ -15,9 +32,31 @@
 
     &__col-1 {
         margin-bottom: 40px;
+        padding-top: 40px;
+        padding-left: 40px;
+        position: relative;
 
-        @media (min-width: 768px) {
-            max-width: 500px;
+        @media (max-width: $md4+px) {
+            padding-top: 20px;
+            padding-left: 20px;
+        }
+
+        &:before {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            display: block;
+            width: 182px;
+            height: 270px;
+            background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgzIiBoZWlnaHQ9IjI3MSIgdmlld0JveD0iMCAwIDE4MyAyNzEiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0wLjUgMjcwLjVMMC41IDM0LjVDMC41IDE1LjcyMjMgMTUuNzIyMyAwLjUgMzQuNSAwLjVIMTgyLjUiIHN0cm9rZT0idXJsKCNwYWludDBfbGluZWFyXzBfNDg5KSIgc3Ryb2tlLWxpbmVjYXA9InNxdWFyZSIvPgo8ZGVmcz4KPGxpbmVhckdyYWRpZW50IGlkPSJwYWludDBfbGluZWFyXzBfNDg5IiB4MT0iLTEzLjc3MDgiIHkxPSIyODEuMDg1IiB4Mj0iMTgyLjUiIHkyPSIyODEuMDg1IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CjxzdG9wIHN0b3AtY29sb3I9IiMxQkFDRDYiLz4KPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjM0ZDNDUzIi8+CjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPC9zdmc+Cg==");
+            background-position: 0 0;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+        @media (min-width: 992px) {
+            max-width: 583px;
             padding-right: 30px;
             flex: 1 1 auto;
             margin-bottom: 0;
@@ -25,7 +64,16 @@
     }
 
     &__col-2 {
-        flex: 0 0 40.63%;
+        flex: 0 0 39%;
+
+        @media (max-width: $md2+px) {
+            padding-left: 40px;
+        }
+
+        
+        @media (max-width: $md4+px) {
+            padding-left: 20px;
+        }
 
         & table {
             
@@ -37,11 +85,18 @@
 
         & .characteristics__title  {
             margin-bottom: 31px;
+            font-weight: 500;
+            text-transform: uppercase;
         }
     }
 
     &__title {
         margin-bottom: 20px;
+        &.title-5 {
+            font-size: 17px;
+            line-height: 1.64em;
+            margin-bottom: 15px;
+        }
     }
 
     &__text {

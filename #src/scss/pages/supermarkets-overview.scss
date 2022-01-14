@@ -1,9 +1,10 @@
 .supermarkets-overview-page {
     & .products {
+        padding-top: 0;
         & > .container {
             @media (min-width: 768px) {
-               padding-top: 60px;
-           }
+                padding-top: 60px;
+            }
         }
 
         & .products__list {
@@ -24,53 +25,44 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    
 
     @media (min-width: 992px) {
         &:hover {
             background: #ffffff;
             box-shadow: 0 11px 55px 10px rgba(0, 0, 0, 0.07), 0 13px 18px -8px rgba(0, 0, 0, 0.15);
-            & .card__img {
-                &:before {
-                    width: 45%;
-                }
-            }
         }
+    }
+
+    &__head {
+        position: relative;
+        padding-bottom: min(220px, 59.4%);
     }
 
     &__img {
-        padding-bottom: 59.4%;
-        position: relative;
-
-        @media (max-width: $md4+px) {
-            padding-bottom: 0;
-            min-height: 220px;
-        }
-
-        &:before {
-            position: absolute;
-            content: '';
-            left: 0;
-            bottom: 0;
-            width: 0;
-            height: 12px;
-            transition: all .3s ease;
-            background: $gradient;
-            z-index: 2;
-        }
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
     }
 
     &__text-wrap {
-        padding: 21px 21px 18px;
-        flex: 1 1 auto;
+        padding: 21px 20px 0px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 2;
     }
 
     &__title {
-        font-family: $berninoSansNarrow;
-        font-weight: bold;
-        font-size: 20px;
-        line-height: 18px;
-        margin-bottom: 5px;
+        font-family: $titleFontFamily;
+        font-weight: 400;
+        font-size: 33px;
+        line-height: 1em;
+        margin-bottom: 0;
+        color: #fff;
+        text-transform: uppercase;
     }
 
     &__group {
@@ -89,8 +81,16 @@
     }
 
     &__subtitle {
-        font-size: 13px;
-        line-height: 18px;
-        margin-right: 15px;
+        font-size: 11px;
+        line-height: 1.4em;
+        color: #fff;
+        text-transform: uppercase;
+    }
+
+    &__bottom {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 20px;
     }
 }

@@ -264,7 +264,7 @@ textarea {
 	line-height: 1.046em;
 	text-transform: uppercase;
 	margin-top: 0;
-	
+
 	& > strong {
 		display: block;
 		font-weight: 400;
@@ -283,7 +283,7 @@ textarea {
 .title-2 {
 	font-family: $titleFontFamily;
 	font-weight: 400;
-	line-height: 1.085em;
+	line-height: 1.142em;
 	margin-top: 0;
 	font-size: 70px;
 	text-transform: uppercase;
@@ -385,7 +385,7 @@ textarea {
 	border-radius: 3px;
 	border: 2px solid;
 	border-color: #000;
-	padding: 10px 15px;
+	padding: 10px 25px;
 	color: $textColor;
 	font-size: 11px;
 	font-weight: 500;
@@ -464,7 +464,7 @@ button.btn-default {
 	align-items: center;
 
 	font-style: normal;
-	font-weight: bold;
+	font-weight: 600;
 	font-size: 13px;
 	line-height: 18px;
 	color: $textColor;
@@ -486,7 +486,7 @@ button.btn-default {
 	align-items: center;
 
 	font-style: normal;
-	font-weight: bold;
+	font-weight: 600;
 	font-size: 13px;
 	line-height: 18px;
 	color: $textColor;
@@ -499,7 +499,7 @@ button.btn-default {
 	}
 
 	& img {
-		margin-right: 17px;
+		margin-right: 12px;
 	}
 }
 
@@ -583,9 +583,9 @@ button.btn-default {
 		margin-bottom: 1.96em;
 
 		&.big-text {
-			font-weight: 400;
+			font-weight: 600;
 			font-size: 20px;
-			line-height: 30px;
+			line-height: 35px;
 			margin-bottom: 1.7em;
 		}
 
@@ -598,29 +598,36 @@ button.btn-default {
 	& q {
 		display: block;
 		position: relative;
-		font-family: $berninoSansNarrow;
+		font-family: $titleFontFamily;
 		font-style: normal;
 		font-weight: bold;
-		font-size: 25px;
-		line-height: 36px;
-		padding-left: 35px;
-		margin: 2.75em 0 2.83em;
-		padding-top: 8px;
-		padding-bottom: 37px;
+		font-size: 50px;
+		line-height: 120%;
+		padding-left: 30px;
+		padding-top: 30px;
+		padding-bottom: 20px;
+		margin: 0.95em 0 1.25em;
+		text-transform: uppercase;
 
-		& > strong {
-			max-width: 485px;
-			display: block;
+		@media (max-width: $md3+px) {
+			padding-top: 20px;
+			padding-left: 20px;
+			font-size: 36px;
 		}
+
 
 		&:before {
 			position: absolute;
 			content: "";
 			top: 0;
 			left: 0;
-			width: 12px;
+			display: block;
+			width: 100%;
 			height: 100%;
-			background: linear-gradient(180deg, #1bacd6 -7.84%, #3fc453 100%);
+			background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgzIiBoZWlnaHQ9IjI3MSIgdmlld0JveD0iMCAwIDE4MyAyNzEiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0wLjUgMjcwLjVMMC41IDM0LjVDMC41IDE1LjcyMjMgMTUuNzIyMyAwLjUgMzQuNSAwLjVIMTgyLjUiIHN0cm9rZT0idXJsKCNwYWludDBfbGluZWFyXzBfNDg5KSIgc3Ryb2tlLWxpbmVjYXA9InNxdWFyZSIvPgo8ZGVmcz4KPGxpbmVhckdyYWRpZW50IGlkPSJwYWludDBfbGluZWFyXzBfNDg5IiB4MT0iLTEzLjc3MDgiIHkxPSIyODEuMDg1IiB4Mj0iMTgyLjUiIHkyPSIyODEuMDg1IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CjxzdG9wIHN0b3AtY29sb3I9IiMxQkFDRDYiLz4KPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjM0ZDNDUzIi8+CjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPC9zdmc+Cg==);
+			background-position: 0 0;
+			background-repeat: no-repeat;
+			background-size: auto 100%;
 		}
 
 		&:first-child {
@@ -645,7 +652,7 @@ button.btn-default {
 	}
 
 	& figure {
-		margin: 6.2em 0 7.7em;
+		margin: 4.2em 0 3.7em;
 
 		@media (max-width: $md3+px) {
 			margin: 4em 0 4em;
@@ -655,6 +662,42 @@ button.btn-default {
 			height: auto;
 			min-height: 350px;
 			object-fit: cover;
+		}
+
+		& ul {
+			display: flex;
+			flex-wrap: wrap;
+			margin-bottom: 0;
+			margin-top: 0;
+			justify-content: space-between;
+
+			& li {
+				flex: 0 1 calc(50% - 12px);
+				position: relative;
+				padding-bottom: calc(30.84% - 12px);
+				overflow: hidden;
+				margin-bottom: 24px;
+				list-style: none;
+				border-radius: 2px;
+
+				&:first-child {
+					border-radius: 40px 2px 2px 2px;
+				}
+
+				&:nth-child(3n) {
+					flex: 0 1 100%;
+					padding-bottom: 44.34%;
+				}
+
+				& img {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+			}
 		}
 	}
 }
@@ -684,12 +727,17 @@ table {
 	}
 
 	& td {
-		height: 60px;
-		font-size: 13px;
+		height: 50px;
+		font-size: 14px;
 		line-height: 18px;
 		color: rgba(#000, 0.5);
-		border-top: 1px solid rgba(#979797, 0.3);
-		border-bottom: 1px solid rgba(#979797, 0.3);
+		text-transform: uppercase;
+
+		@media (max-width: $md4+px) {
+			font-size: 12px;
+			height: 40px;
+		}
+
 		&:not(:last-child) {
 			padding-right: 24px;
 		}
