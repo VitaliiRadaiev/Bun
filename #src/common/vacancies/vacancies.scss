@@ -89,7 +89,7 @@
 
     &__text-wrap {
         flex: 1 1 auto;
-        padding: 26px 27px 18px 32px;
+        padding: 31px 35px 13px 32px;
 
         @media (max-width: $md3+px) {
             padding: 15px;
@@ -97,11 +97,15 @@
     }
 
     &__title {
-        margin-bottom: 8px;
+        margin-bottom: 13px;
         font-size: 18px;
         font-weight: 600;
         line-height: 1.2em;
         text-transform: uppercase;
+
+        @media (max-width: $md3+px) {
+            font-size: 14px;
+        }
     }
 
     &__text {
@@ -121,6 +125,10 @@
 
         & .btn-default {
             margin-bottom: 10px;
+
+            @media (min-width: 992px) {
+                min-width: 160px;
+            }
         }
     }
 

@@ -345,10 +345,19 @@ textarea {
 		margin-bottom: 9px;
 		flex: 0 0 auto;
 
+		@media (min-width: 992px) {
+			margin-right: 14px;
+		}
+
 		& > a {
 			display: block;
 			height: 25px;
 			width: 25px;
+
+			@media (min-width: 992px) {
+				height: 38px;
+				width: 38px;
+			}
 
 			& svg {
 				height: 100%;
@@ -381,7 +390,7 @@ textarea {
 	align-items: center;
 	justify-content: center;
 	min-width: 134px;
-	min-height: 40px;
+	min-height: 45px;
 	border-radius: 3px;
 	border: 2px solid;
 	border-color: #000;
@@ -615,7 +624,6 @@ button.btn-default {
 			font-size: 36px;
 		}
 
-
 		&:before {
 			position: absolute;
 			content: "";
@@ -725,7 +733,6 @@ table {
 		&:not(:last-child) {
 			padding-right: 24px;
 		}
-
 	}
 
 	& td {
@@ -734,7 +741,6 @@ table {
 		line-height: 18px;
 		color: rgba(#000, 0.5);
 		text-transform: uppercase;
-
 
 		@media (max-width: $md4+px) {
 			font-size: 12px;

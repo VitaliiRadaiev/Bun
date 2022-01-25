@@ -1,12 +1,16 @@
 .black-box {
     background-color: #24272a;
     min-height: 140px;
-    padding: 30px 36px 30px 36px;
+    padding: 30px 36px 30px 51px;
     width: 100%;
     display: flex;
     flex-direction: column;
     color: #fff;
     position: relative;
+
+    @media (max-width: $md2+px) {
+        padding: 30px 36px 30px 36px;
+    }
 
     & .btn-default  {
       align-self: flex-start;  
@@ -56,7 +60,10 @@
         align-items: center;
         flex-wrap: wrap;
         margin: 0 -15px;
-        justify-content: space-between;
+
+        @media (max-width: $md1+px) {
+            justify-content: space-between;
+        }
     }
 
     &__col-1 {
