@@ -27,6 +27,7 @@ window.addEventListener('load', function () {
 	@@include('forms.js');
 	@@include('../common/checkbox/checkbox.js');
 	@@include('../common/header/header.js');
+	@@include('../common/hero/hero.js');
 	@@include('../common/footer/footer.js');
 	@@include('../common/new-projects/new-projects.js');
 	@@include('../common/gallery-slider/gallery-slider.js');

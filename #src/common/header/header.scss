@@ -5,71 +5,26 @@
     width: 100%;
     z-index: 40;
     background-color: #fff;
-
     box-shadow: 0 0 20px rgba(#000, 0.2);
-
-    &__top {
-        border-top: 1px solid #fff;
-        @media (min-width: 992px) {
-            border-bottom: 1px solid #e7e5ea;
-            border-top: none;
-        }
-    }
-
-    &__top-content {
-        display: flex;
-        min-height: 29px;
-        align-items: center;
-        padding-top: 9px;
-        padding-bottom: 5px;
-
-        @media (min-width: 992px) {
-            justify-content: flex-end;
-            padding-right: 36px;
-        }
-
-        @media (max-width: $md2+px) {
-            min-height: 62px;
-            padding: 10px 0;
-            justify-content: center;
-        }
-    }
-
-    &__top-link {
-        color: $textColor;
-        font-size: 9px;
-        line-height: 1.2em;
-        margin: 0 13.5px;
-        transition: all 0.3s ease;
-
-        @media (max-width: $md2+px) {
-            color: #ffffff;
-            font-size: 13px;
-            font-weight: 700;
-
-            margin: 0;
-
-            &:not(:last-child) {
-                &:after {
-                    content: '|';
-                    margin: 0 13px 0 11px;
-                }
-            }
-        }
-
-        @media (min-width: 992px) {
-            &:hover {
-                text-decoration: underline;
-            }
-        }
-    }
 
     &__body {
         display: flex;
         align-items: center;
         min-height: 85px;
+        padding-left: 65px;
+        padding-right: 65px;
 
-        @media (max-width: $md2+px) {
+        @media (max-width: 1440px) {
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+
+        @media (max-width: 400px) {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        @media (max-width: 1023.98px) {
             min-height: 73px;
         }
     }
@@ -77,15 +32,7 @@
     &__logo {
         width: 100%;
         max-width: 79px;
-        margin-right: 108px;
-
-        @media (max-width: $md1+px) {
-            margin-right: 30px;
-        }
-
-        @media (max-width: $md4+px) {
-            max-width: 47px;
-        }
+        margin-right: 25px;
 
         & img,
         & svg {
@@ -95,25 +42,21 @@
     }
 
     &__menu {
-        @media (min-width: 1268px) {
-            margin-right: 30px;
-            margin-left: 0;
-        }
-
-        @media (min-width: 992px) {
-            margin: 0 auto;
+        @media (min-width: 1024px) {
+            margin-right: auto;
+            margin-left: auto;
         }
     }
 
     &__btn-gruop {
-        margin-left: auto;
         display: flex;
+        flex: 0 0 auto;
 
-        @media (min-width: 992px) {
-            padding-right: 9px;
+        @media (min-width: 1024px) {
+            margin-left: 25px;
         }
 
-        @media (max-width: $md2+px) {
+        @media (max-width: 1023.98px) {
             justify-content: center;
             margin-bottom: 35px;
         }
@@ -121,8 +64,8 @@
         & .header__btn {
             &:first-child {
                 margin-right: 16px;
-
-                @media (max-width: $md2+px) {
+                border: 2px solid rgba(#000, 0.17);
+                @media (max-width: 1023.98px) {
                     margin-right: 26px;
                 }
             }
@@ -135,15 +78,41 @@
             position: absolute;
             top: 5px;
             right: 10px;
+
+            @media (max-width: $md1+px) {
+                right: 4px;
+                top: 3px;
+                font-size: 6px;
+                min-height: 12px;
+                min-width: 15px;
+            }
         }
 
         &.btn-default {
             min-height: 45px;
+            padding-left: 20px;
+            padding-right: 20px;
             &:not(.btn-default_blue) {
-                @media (max-width: $md2+px) {
+                @media (max-width: 1023.98px) {
                     color: #fff;
                     border-color: #fff;
                 }
+            }
+
+            @media (max-width: $md1+px) and (min-width: 1024px) {
+                min-height: 40px;
+                padding-left: 10px;
+                padding-right: 10px;
+                font-size: 9px;
+                min-width: 100px;
+            }
+
+            @media (max-width: 400px) {
+                min-height: 40px;
+                padding-left: 10px;
+                padding-right: 10px;
+                font-size: 9px;
+                min-width: 100px;
             }
         }
     }
@@ -154,14 +123,14 @@
             margin-right: -10px;
         }
 
-        @media (min-width: 992px) {
+        @media (min-width: 1024px) {
             display: none;
         }
     }
 }
 
 .menu {
-    @media (max-width: $md2+px) {
+    @media (max-width: 1023.98px) {
         position: fixed;
         top: 0;
         left: 0;
@@ -174,7 +143,7 @@
         display: flex;
         flex-direction: column;
         overflow: auto;
-        transition: all .6s ease;
+        transition: all 0.6s ease;
         transform: translateX(110%);
 
         @media (max-width: 400px) {
@@ -192,7 +161,7 @@
     }
 
     &__mob-head {
-        @media (min-width: 992px) {
+        @media (min-width: 1024px) {
             display: none;
         }
 
@@ -231,21 +200,21 @@
     }
 
     &__list {
-        @media (min-width: 992px) {
+        @media (min-width: 1024px) {
             display: flex;
         }
 
-        @media (max-width: $md2+px) {
+        @media (max-width: 1023.98px) {
             margin-bottom: 65px;
         }
 
         & > li {
             &:not(:last-child) {
-                @media (min-width: 992px) {
-                    margin-right: 35px;
+                @media (min-width: 1024px) {
+                    margin-right: 30px;
                 }
 
-                @media (max-width: $md2+px) {
+                @media (max-width: 1023.98px) {
                     border-bottom: 1px solid #fff;
                 }
             }
@@ -254,7 +223,11 @@
                 & > .menu__link {
                     padding-right: 29px;
 
-                    @media (max-width: $md2+px) {
+                    @media (max-width: 1365px) {
+                        padding-right: 20px;
+                    }
+
+                    @media (max-width: 1023.98px) {
                         padding-right: 35px;
                     }
 
@@ -267,7 +240,7 @@
                         transform: translateY(-50%);
                         transition: all 0.3s ease;
 
-                        @media (max-width: $md2+px) {
+                        @media (max-width: 1023.98px) {
                             transform: translateY(-50%) rotate(-90deg);
                             font-size: 11px;
                             font-weight: 400;
@@ -289,18 +262,28 @@
         display: flex;
         min-height: 85px;
         align-items: center;
-        font-size: 12px;
+        font-size: 11px;
         line-height: 1.2em;
         position: relative;
         color: #fff;
+        text-transform: uppercase;
+        white-space: nowrap;
 
-        @media (max-width: $md2+px) {
+        @media (max-width: 1365px) {
+            font-size: 9px;
+        }
+
+        @media (max-width: $md1+px) {
+            font-size: 8px;
+        }
+
+        @media (max-width: 1023.98px) {
             min-height: 48px;
             font-size: 13px;
             font-weight: 700;
         }
 
-        @media (min-width: 992px) {
+        @media (min-width: 1024px) {
             color: $textColor;
             &:hover {
                 &:before {
@@ -309,7 +292,7 @@
             }
         }
 
-        @media (min-width: 992px) {
+        @media (min-width: 1024px) {
             &:before {
                 position: absolute;
                 content: "";
@@ -331,7 +314,7 @@
     }
 
     &__copy {
-        @media (min-width: 992px) {
+        @media (min-width: 1024px) {
             display: none;
         }
 
@@ -367,13 +350,13 @@
     padding: 2px 4px;
     background-image: $gradient;
     color: #ffffff;
-    font-size: 10px;
-    font-weight: 700;
+    font-size: 7px;
+    font-weight: 500;
     line-height: 1em;
 }
 
 .sub-menu {
-    @media (min-width: 992px) {
+    @media (min-width: 1024px) {
         position: absolute;
         top: 100%;
         left: 50%;
@@ -396,13 +379,13 @@
         }
     }
 
-    @media (max-width: $md2+px) {
+    @media (max-width: 1023.98px) {
         margin-bottom: 20px;
         display: none;
     }
 
     &__col-1 {
-        @media (min-width: 992px) {
+        @media (min-width: 1024px) {
             flex: 0 0 26%;
             padding-right: 20px;
             display: flex;
@@ -417,7 +400,7 @@
     &__col-2 {
         flex: 1 1 auto;
 
-        @media (max-width: $md2+px) {
+        @media (max-width: 1023.98px) {
             display: none;
         }
     }
@@ -430,13 +413,13 @@
         display: block;
         margin-bottom: 18px;
 
-        @media (max-width: $md2+px) {
+        @media (max-width: 1023.98px) {
             display: none;
         }
     }
 
     &__list {
-        @media (min-width: 992px) {
+        @media (min-width: 1024px) {
             margin-bottom: 30px;
             padding-top: 8px;
         }
@@ -451,7 +434,7 @@
                 line-height: 1.2em;
                 transition: all 0.3s ease;
 
-                @media (min-width: 992px) {
+                @media (min-width: 1024px) {
                     color: $textColor;
                     &.active {
                         text-decoration: underline;
@@ -471,7 +454,7 @@
         line-height: 1.2em;
         text-decoration: underline;
 
-        @media (max-width: $md2+px) {
+        @media (max-width: 1023.98px) {
             display: none;
         }
     }
@@ -529,7 +512,7 @@
     background-color: #ffffff;
     overflow: hidden;
 
-    @media (min-width: 992px) {
+    @media (min-width: 1024px) {
         &:hover {
             box-shadow: 0 11px 55px 10px rgba(0, 0, 0, 0.07), 0 13px 18px -8px rgba(0, 0, 0, 0.15);
             & .sub-menu-card__line {

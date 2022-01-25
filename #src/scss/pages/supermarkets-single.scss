@@ -5,6 +5,14 @@
         }
     }
 
+    & .hero {
+        & .promo-header__flex-group .black-box {
+            @media (min-width: 1268px) {
+                transform: translateY(34px);
+            }
+        }
+    } 
+
     & .article {
         @media (min-width: 768px) {
             margin-bottom: 105px;

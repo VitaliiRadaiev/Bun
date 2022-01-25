@@ -9,13 +9,13 @@
     & .hero__body  {
         padding-bottom: 0;
 
-        @media (max-width: $md2+px) {
-            padding-top: 0;
-            height: 400px;
-        }
-        @media (max-width: $md3+px) {
-            height: 292px;
-        }
+        // @media (max-width: $md2+px) {
+        //     padding-top: 0;
+        //     height: 400px;
+        // }
+        // @media (max-width: $md3+px) {
+        //     height: 292px;
+        // }
     }
 }
 .article {
