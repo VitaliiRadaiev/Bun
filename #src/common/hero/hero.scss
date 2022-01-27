@@ -93,6 +93,17 @@
             margin-top: auto;
             min-height: 189px;
         }
+
+        & .promo-header__title {
+            min-height: 160px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+
+            @media (max-width: $md3+px) {
+                min-height: 92px;
+            }
+        }
     }
 
     &__title {

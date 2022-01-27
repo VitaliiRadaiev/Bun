@@ -47,7 +47,7 @@
                             dataYearsSlider.slideTo(id);
                             dataHistorySlider.slideTo(id);
                         }
-                    }
+                    },
                 },
                 // navigation: {
                 //     nextEl: historySlider.querySelector('.slider-button.next'),
@@ -75,6 +75,68 @@
                     loadPrevNext: true,
                 },
             });
+
+
+
+            let slides = yearsSlider.querySelectorAll('.history__years-item');
+            let btnNext = historySlider.querySelector('.slider-button.next');
+            if(btnNext) {
+                btnNext.addEventListener('click', async () => {
+                    let activeItem = yearsSlider.querySelector('.history__years-item._active');
+                    if(activeItem.nextElementSibling) {
+                        let item = activeItem.nextElementSibling;
+                        let id = item.dataset.id;
+                        item.classList.add('_active');
+
+                        slides.forEach(i => {
+                            if (i == item) return;
+        
+                            i.classList.remove('_active');
+                        })
+        
+                        await new Promise((res, rej) => {
+                            setTimeout(() => {
+                                dataYearsSlider.update();
+                                res();
+                            }, 350)
+                        })
+        
+                        dataYearsSlider.slideTo(id);
+                        dataHistorySlider.slideTo(id);
+                    }
+                    
+                })
+            }
+
+            let btnPrev = historySlider.querySelector('.slider-button.prev');
+            if(btnPrev) {
+                btnPrev.addEventListener('click', async () => {
+                    let activeItem = yearsSlider.querySelector('.history__years-item._active');
+                    if(activeItem.previousElementSibling) {
+                        let item = activeItem.previousElementSibling;
+                        let id = item.dataset.id;
+                        item.classList.add('_active');
+
+                        slides.forEach(i => {
+                            if (i == item) return;
+        
+                            i.classList.remove('_active');
+                        })
+        
+                        await new Promise((res, rej) => {
+                            setTimeout(() => {
+                                dataYearsSlider.update();
+                                res();
+                            }, 350)
+                        })
+        
+                        dataYearsSlider.slideTo(id);
+                        dataHistorySlider.slideTo(id);
+                    }
+                    
+                })
+            }
+
         }, 350)
 
     }

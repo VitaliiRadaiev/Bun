@@ -74,11 +74,15 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        & .link-icon-left {
+            font-weight: 400;
+        }
     }
 
     &__total {
         display: flex;
-        font-weight: bold;
+        font-weight: 400;
         font-size: 13px;
         line-height: 18px;
 

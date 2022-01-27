@@ -4,9 +4,10 @@
         margin: 0 auto;
         width: 100%;
         text-align: left;
+        min-height: auto;
     }
 
-    & .hero__body  {
+    & .hero__body {
         padding-bottom: 0;
 
         // @media (max-width: $md2+px) {
@@ -121,13 +122,15 @@
         }
 
         @media (min-width: 992px) {
-            &:nth-child(3n+2) {
-                & .card-product__head, & .card__text-wrap {
+            &:nth-child(3n + 2) {
+                & .card-product__head,
+                & .card__text-wrap {
                     text-align: center;
                 }
             }
-            &:nth-child(3n+3) {
-                & .card-product__head, & .card__text-wrap {
+            &:nth-child(3n + 3) {
+                & .card-product__head,
+                & .card__text-wrap {
                     text-align: right;
                 }
             }
@@ -143,11 +146,11 @@
     @media (min-width: 992px) {
         &:hover {
             background: #ffffff;
-            box-shadow: 0 11px 55px 10px rgba(0, 0, 0, 0.07), 0 13px 18px -8px rgba(0, 0, 0, 0.15);        }
+            box-shadow: 0 11px 55px 10px rgba(0, 0, 0, 0.07), 0 13px 18px -8px rgba(0, 0, 0, 0.15);
+        }
     }
     &__img {
         padding-bottom: 59.4%;
-
 
         @media (max-width: $md4+px) {
             padding-bottom: 0;
@@ -155,6 +158,29 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
+        }
+
+        &:before {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.25+100 */
+            background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.25) 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(
+                top,
+                rgba(0, 0, 0, 0) 0%,
+                rgba(0, 0, 0, 0.25) 100%
+            ); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0) 0%,
+                rgba(0, 0, 0, 0.25) 100%
+            ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#40000000',GradientType=0 ); /* IE6-9 */
         }
     }
 
@@ -176,15 +202,14 @@
 
         @media (max-width: $md4+px) {
             position: relative;
-
         }
     }
 
     &__title {
         font-family: $berninoSansNarrow;
-        font-size: 20px;
-        font-weight: 700;
-        line-height: 1.2em;
+        font-size: 15px;
+        line-height: 18px;
+        font-weight: 500;
         margin-bottom: 5px;
     }
 

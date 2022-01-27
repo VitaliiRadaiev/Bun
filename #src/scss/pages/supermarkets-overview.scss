@@ -30,6 +30,13 @@
         &:hover {
             background: #ffffff;
             box-shadow: 0 11px 55px 10px rgba(0, 0, 0, 0.07), 0 13px 18px -8px rgba(0, 0, 0, 0.15);
+        
+            & .card__bottom {
+                & .link-icon-right {
+                    color: $mainColor;
+                    font-weight: 600;
+                }
+            }
         }
     }
 
@@ -92,5 +99,9 @@
         align-items: center;
         justify-content: flex-end;
         padding: 20px;
+
+        & .link-icon-right {
+            font-weight: 400;
+        }
     }
 }

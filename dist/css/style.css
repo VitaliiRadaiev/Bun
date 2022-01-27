@@ -4364,7 +4364,7 @@ table td img[data-tooltip-text] {
   -webkit-transform: translateY(-100%);
       -ms-transform: translateY(-100%);
           transform: translateY(-100%);
-  font-weight: 300;
+  font-weight: 400;
   text-transform: uppercase;
 }
 
@@ -4397,13 +4397,13 @@ table td img[data-tooltip-text] {
 }
 
 .card-product__bottom-item:not(:last-child) {
-  margin-right: 30px;
+  margin-right: 20px;
 }
 
 .card-product__bottom-item img {
-  max-height: 17px;
+  max-height: 15px;
   width: auto;
-  margin-right: 13px;
+  margin-right: 10px;
 }
 
 .nav {
@@ -4707,6 +4707,20 @@ table td img[data-tooltip-text] {
   min-height: 189px;
 }
 
+.hero__body .promo-header__title {
+  min-height: 160px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
 .hero__title {
   margin-top: 0px;
   margin-bottom: 0px;
@@ -4826,8 +4840,8 @@ table td img[data-tooltip-text] {
 }
 
 .new-projects__slider .swiper-slide {
-  width: 69%;
-  padding-bottom: max(37.5%, 400px);
+  width: 80.55%;
+  height: 621px;
   color: #fff;
 }
 
@@ -4870,6 +4884,26 @@ table td img[data-tooltip-text] {
   line-height: 1em;
 }
 
+.new-projects__slider-next {
+  position: absolute;
+  top: 50%;
+  right: 60px;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  padding: 10px;
+  z-index: 3;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.new-projects__slider-next img {
+  width: 36px;
+  height: auto;
+}
+
 .new-projects__card {
   position: relative;
   z-index: 2;
@@ -4893,6 +4927,12 @@ table td img[data-tooltip-text] {
 .new-projects__text {
   max-width: 364px;
   margin-bottom: 30px;
+}
+
+.new-projects .info-bun__bottom {
+  background: -webkit-gradient(linear, left bottom, left top, from(#EEEEEE), to(#EEEEEE));
+  background: -o-linear-gradient(bottom, #EEEEEE, #EEEEEE);
+  background: linear-gradient(0deg, #EEEEEE, #EEEEEE);
 }
 
 .gallery-slider {
@@ -4949,11 +4989,15 @@ table td img[data-tooltip-text] {
           align-items: center;
 }
 
+.gallery-slider__bottom .link-icon-left {
+  font-weight: 400;
+}
+
 .gallery-slider__total {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  font-weight: bold;
+  font-weight: 400;
   font-size: 13px;
   line-height: 18px;
 }
@@ -5434,6 +5478,20 @@ table td img[data-tooltip-text] {
   margin-bottom: 20px;
 }
 
+.hero-v3__title.title-3 {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  line-height: 1.142em;
+  margin-top: 0;
+  font-size: 70px;
+  text-transform: uppercase;
+}
+
+.hero-v3__title.title-3 > strong {
+  display: block;
+  font-weight: 400;
+}
+
 .hero-v3__subtitle {
   max-width: 650px;
   font-size: 18px;
@@ -5456,6 +5514,7 @@ table td img[data-tooltip-text] {
   border-radius: 200px;
   font-weight: 600;
   white-space: nowrap;
+  text-transform: none;
 }
 
 .video-block {
@@ -5655,12 +5714,10 @@ table td img[data-tooltip-text] {
   height: 100%;
   z-index: 5;
   pointer-events: none;
-  display: none;
 }
 
 .slider-button {
-  width: 45px;
-  height: 58px;
+  height: 68px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -5677,10 +5734,14 @@ table td img[data-tooltip-text] {
           transform: translateY(-50%);
   pointer-events: auto;
   position: absolute;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  padding: 10px;
 }
 
 .slider-button img {
-  height: 58px;
+  height: 100%;
   width: auto;
 }
 
@@ -5900,9 +5961,8 @@ table td img[data-tooltip-text] {
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
   margin: 10px 0;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 
 .news-card__label {
@@ -5918,6 +5978,7 @@ table td img[data-tooltip-text] {
   font-weight: 700;
   text-transform: uppercase;
   line-height: 1.2em;
+  margin-bottom: 10px;
 }
 
 .news-card__text {
@@ -6386,6 +6447,7 @@ table td img[data-tooltip-text] {
   margin: 0 auto;
   width: 100%;
   text-align: left;
+  min-height: auto;
 }
 
 .article-single-page .hero__body {
@@ -6504,6 +6566,25 @@ table td img[data-tooltip-text] {
   padding-bottom: 59.4%;
 }
 
+.news-card-v2__img:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.25+100 */
+  /* FF3.6-15 */
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.25)));
+  background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.25) 100%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.25) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#00000000", endColorstr="#40000000",GradientType=0 );
+  /* IE6-9 */
+}
+
 .news-card-v2__label {
   position: absolute;
   top: 20px;
@@ -6523,9 +6604,9 @@ table td img[data-tooltip-text] {
 
 .news-card-v2__title {
   font-family: "termina", sans-serif;
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 1.2em;
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: 500;
   margin-bottom: 5px;
 }
 
@@ -6690,6 +6771,10 @@ table td img[data-tooltip-text] {
       -ms-flex-pack: end;
           justify-content: flex-end;
   padding: 20px;
+}
+
+.card__bottom .link-icon-right {
+  font-weight: 400;
 }
 
 .supermarkets-single-page .article__body {
@@ -7213,6 +7298,12 @@ table td img[data-tooltip-text] {
     left: 28px;
   }
 
+  .products.articles_listing .products__list > li.big + li .news-card-v2 .news-card-v2__title {
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 10px;
+  }
+
   .products.articles_listing .products__list > li.big + li .card .card__head {
     padding-bottom: 0;
     -webkit-box-flex: 1;
@@ -7368,6 +7459,10 @@ table td img[data-tooltip-text] {
     background: rgba(142, 142, 142, 0.6);
   }
 
+  .new-projects__slider-next:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
   .new-projects__card {
     margin-left: 107px;
   }
@@ -7414,6 +7509,10 @@ table td img[data-tooltip-text] {
     background-color: #ebebeb;
   }
 
+  .slider-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
   .news-updates-b__body {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -7432,12 +7531,17 @@ table td img[data-tooltip-text] {
     padding-top: 12px;
   }
 
+  .news-card {
+    width: calc(100% + 60px);
+    margin-left: -60px;
+  }
+
   .news-card:hover:before {
     opacity: 1;
   }
 
   .news-card__img {
-    width: 50vw;
+    width: 48vw;
   }
 
   .news-mini-card:hover {
@@ -7537,6 +7641,11 @@ table td img[data-tooltip-text] {
     background: #ffffff;
     -webkit-box-shadow: 0 11px 55px 10px rgba(0, 0, 0, 0.07), 0 13px 18px -8px rgba(0, 0, 0, 0.15);
             box-shadow: 0 11px 55px 10px rgba(0, 0, 0, 0.07), 0 13px 18px -8px rgba(0, 0, 0, 0.15);
+  }
+
+  .card:hover .card__bottom .link-icon-right {
+    color: #1bacd6;
+    font-weight: 600;
   }
 
   .card__group .link-icon-right:hover {
@@ -8043,6 +8152,10 @@ table td img[data-tooltip-text] {
     padding-top: 240px;
   }
 
+  .new-projects__slider .swiper-slide {
+    height: 500px;
+  }
+
   .gallery-slider .swiper-container {
     overflow: visible;
   }
@@ -8355,6 +8468,10 @@ table td img[data-tooltip-text] {
     padding-bottom: 50px;
   }
 
+  .hero__body .promo-header__title {
+    min-height: 92px;
+  }
+
   .new-projects {
     margin-bottom: 100px;
     padding-top: 50px;
@@ -8364,9 +8481,25 @@ table td img[data-tooltip-text] {
     margin-bottom: 20px;
   }
 
+  .new-projects__slider .swiper-slide {
+    height: 400px;
+  }
+
   .new-projects__slider .swiper-pagination {
     margin-left: 0;
     bottom: 0px;
+  }
+
+  .new-projects__slide-title {
+    left: 20px;
+  }
+
+  .new-projects__slider-next {
+    right: 10px;
+  }
+
+  .new-projects__slider-next img {
+    width: 25px;
   }
 
   .gallery-slider {
@@ -8448,6 +8581,10 @@ table td img[data-tooltip-text] {
     font-size: 14px;
     padding-left: 20px;
     padding-right: 20px;
+  }
+
+  .hero-v3__title.title-3 {
+    font-size: 40px;
   }
 
   .video-block__play-pause {

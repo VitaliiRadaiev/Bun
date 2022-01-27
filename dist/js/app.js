@@ -988,10 +988,21 @@ if(priceSlider) {
 if(singleArticleHero) {
     let titleWhiteText = singleArticleHero.querySelector('.promo-header__title > strong');
     let bg = singleArticleHero.querySelector('.hero__img');
+
+    // if(!titleWhiteText) {
+    //     let title = singleArticleHero.querySelector('.promo-header__title');
+    //     let text = title.innerText.split(' ');
+    //     let half = Math.round(text.length / 2);
+    //     title.innerHTML = `<strong>${text.slice(0, half).join(' ')}</strong> <strong>${text.slice(half).join(' ')}</strong>`
+    //     console.log(text);
+    //     console.log(half);
+    // }
     
     const setBgHeight = () => {
-        let height = titleWhiteText.offsetTop + titleWhiteText.clientHeight;
-        bg.style.height = height + 'px';
+        if(titleWhiteText) {
+            let height = titleWhiteText.offsetTop + titleWhiteText.clientHeight;
+            bg.style.height = height + 'px';
+        }
     }
 
     setBgHeight();
@@ -1032,36 +1043,13 @@ if(singleArticleHero) {
     let slider = document.querySelector('.new-projects__slider');
     if(slider) {
         let dataSlider = new Swiper(slider, {
-            observer: true,
-            observeParents: true,
             slidesPerView: 'auto',
             spaceBetween: 0,
             speed: 800,
-            pagination: {
-            	el: slider.querySelector('.swiper-pagination'),
-            	clickable: true,
+            loop: true,
+            navigation: {
+                nextEl: '.new-projects__slider-next',
             },
-            /*
-            breakpoints: {
-                320: {
-                    slidesPerView: 1,
-                    spaceBetween: 0,
-                    autoHeight: true,
-                },
-                768: {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
-                },
-                992: {
-                    slidesPerView: 3,
-                    spaceBetween: 20,
-                },
-                1268: {
-                    slidesPerView: 4,
-                    spaceBetween: 30,
-                },
-            },
-            */
         });
     }
 
@@ -1462,7 +1450,7 @@ VideoHandler();;
                             dataYearsSlider.slideTo(id);
                             dataHistorySlider.slideTo(id);
                         }
-                    }
+                    },
                 },
                 // navigation: {
                 //     nextEl: historySlider.querySelector('.slider-button.next'),
@@ -1490,6 +1478,68 @@ VideoHandler();;
                     loadPrevNext: true,
                 },
             });
+
+
+
+            let slides = yearsSlider.querySelectorAll('.history__years-item');
+            let btnNext = historySlider.querySelector('.slider-button.next');
+            if(btnNext) {
+                btnNext.addEventListener('click', async () => {
+                    let activeItem = yearsSlider.querySelector('.history__years-item._active');
+                    if(activeItem.nextElementSibling) {
+                        let item = activeItem.nextElementSibling;
+                        let id = item.dataset.id;
+                        item.classList.add('_active');
+
+                        slides.forEach(i => {
+                            if (i == item) return;
+        
+                            i.classList.remove('_active');
+                        })
+        
+                        await new Promise((res, rej) => {
+                            setTimeout(() => {
+                                dataYearsSlider.update();
+                                res();
+                            }, 350)
+                        })
+        
+                        dataYearsSlider.slideTo(id);
+                        dataHistorySlider.slideTo(id);
+                    }
+                    
+                })
+            }
+
+            let btnPrev = historySlider.querySelector('.slider-button.prev');
+            if(btnPrev) {
+                btnPrev.addEventListener('click', async () => {
+                    let activeItem = yearsSlider.querySelector('.history__years-item._active');
+                    if(activeItem.previousElementSibling) {
+                        let item = activeItem.previousElementSibling;
+                        let id = item.dataset.id;
+                        item.classList.add('_active');
+
+                        slides.forEach(i => {
+                            if (i == item) return;
+        
+                            i.classList.remove('_active');
+                        })
+        
+                        await new Promise((res, rej) => {
+                            setTimeout(() => {
+                                dataYearsSlider.update();
+                                res();
+                            }, 350)
+                        })
+        
+                        dataYearsSlider.slideTo(id);
+                        dataHistorySlider.slideTo(id);
+                    }
+                    
+                })
+            }
+
         }, 350)
 
     }

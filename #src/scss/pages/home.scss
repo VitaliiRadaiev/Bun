@@ -262,6 +262,9 @@
     font-family: $mainFontFamily;
 
     @media (min-width: 992px) {
+        width: calc(100% + 60px);
+        margin-left: -60px;
+
         &:hover {
             &:before {
                 opacity: 1;
@@ -277,7 +280,7 @@
         right: 0;
 
         @media (min-width: 992px) {
-            width: 50vw;
+            width: 48vw;
         }
 
         @media (max-width: $md3+px) {
@@ -315,7 +318,7 @@
         & .btn-default {
             flex: 0 0 auto;
             margin: 10px 0;
-            align-self: center;
+            align-self: flex-end;
             @media (min-width: 1268px) {
                 min-width: 158px;
             }
@@ -339,6 +342,7 @@
         font-weight: 700;
         text-transform: uppercase;
         line-height: 1.2em;
+        margin-bottom: 10px;
     }
 
     &__text {
