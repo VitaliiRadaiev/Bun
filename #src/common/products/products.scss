@@ -268,6 +268,10 @@
                             & .link-icon-right {
                                 color: #fff;
                             }
+
+                            & .card__text-wrap {
+                                padding-right: 220px;
+                            }
                         }
                     }
 
@@ -390,19 +394,17 @@
                 }
             }
 
-            &:not(.big) {
-                @media (min-width: 992px) {
-                    &:nth-child(3n + 2) {
-                        & .card-product__head,
-                        & .card__text-wrap {
-                            text-align: center;
-                        }
+            @media (min-width: 992px) {
+                &.second {
+                    & .card-product__head,
+                    & .card__text-wrap {
+                        text-align: center;
                     }
-                    &:nth-child(3n + 3) {
-                        & .card-product__head,
-                        & .card__text-wrap {
-                            text-align: right;
-                        }
+                }
+                &.third {
+                    & .card-product__head,
+                    & .card__text-wrap {
+                        text-align: right;
                     }
                 }
             }

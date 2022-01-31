@@ -4,7 +4,7 @@ let isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return
 
 
 window.addEventListener('load', function () {
-	
+
 	document.body.classList.add('is-load');
 
 	// ==== ADD PADDING-TOP ================================
@@ -12,12 +12,12 @@ window.addEventListener('load', function () {
 		let wrapper = document.querySelector('._padding-top');
 		if (wrapper) {
 			let header = document.querySelector('.header');
-			if(header) {
+			if (header) {
 				const setPedding = () => wrapper.style.paddingTop = header.clientHeight + 'px';
 				setPedding();
 				window.addEventListener('resize', setPedding);
 			}
-			
+
 		}
 	}
 	// ==== AND ADD PADDING-TOP ================================
@@ -37,14 +37,51 @@ window.addEventListener('load', function () {
 	@@include('../common/video-block/video-block.js');
 	@@include('../common/history/history.js');
 	@@include('../common/gallery/gallery.js');
-	
+
 
 	let tooltipItems = document.querySelectorAll('[data-tooltip-text]');
-	if(tooltipItems.length) {
+	if (tooltipItems.length) {
 		tooltipItems.forEach(item => {
 			tippy(item, {
 				content: item.dataset.tooltipText || '',
-			  });
+			});
+		})
+	}
+
+
+	let productList = document.querySelector('.products__list');
+	if (productList) {
+		let arr = Array.from(productList.children).filter(i => {
+			if (i.previousElementSibling) {
+				if (i.previousElementSibling.classList.contains('big')) {
+					return false
+				} else {
+					return i;
+				}
+			} else {
+				return i
+			}
+		})
+		.filter(i => i.classList.contains('big') ? false : i);
+
+		const splitArray = (arr, length) => {
+			let arr2 = []
+			let step = Math.floor(arr.length / length);
+			let count = 0;
+			for (let i = 0; i <= step; i++) {
+				arr2.push([arr[count], arr[count + 1], arr[count + 2]]);
+				count += length;
+			}
+
+			return arr2
+		}
+
+		let arrayEl = splitArray(arr, 3);
+
+		arrayEl.forEach(innerArr => {
+			innerArr[0] && innerArr[0].classList.add('first');
+			innerArr[1] && innerArr[1].classList.add('second');
+			innerArr[2] && innerArr[2].classList.add('third');
 		})
 	}
 
@@ -54,8 +91,8 @@ window.addEventListener('load', function () {
 
 
 
-window.addEventListener('DOMContentLoaded', function() {
-	if(isMobile.any()) {
+window.addEventListener('DOMContentLoaded', function () {
+	if (isMobile.any()) {
 		document.body.classList.add('_is-mobile');
 	}
 
