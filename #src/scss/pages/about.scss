@@ -1,5 +1,4 @@
 .about-page {
-
     & .text-block {
         @media (min-width: 768px) {
             margin-bottom: 65px;
@@ -14,9 +13,12 @@
         }
     }
 
-    & .article__body { 
-   
+    & .article__body {
         margin: 0 auto;
+
+        &.container {
+            max-width: 1240px;
+        }
 
         & > * {
             max-width: none;
@@ -25,7 +27,7 @@
         &.text-content {
             & > h3:first-child {
                 text-align: center;
-                
+
                 @media (min-width: 992px) {
                     margin-bottom: 83px;
                 }
@@ -33,6 +35,22 @@
 
             & q {
                 margin-bottom: 1.5em;
+            }
+
+            & p {
+                font-size: 15px;
+                line-height: 25px;
+
+                &.big-text {
+                    font-size: 17px;
+                    line-height: 28px;
+                }
+            }
+        }
+
+        & .text-col-2 {
+            @media (min-width: 992px) {
+                column-gap: 94px;
             }
         }
     }

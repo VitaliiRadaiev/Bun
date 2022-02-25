@@ -27,7 +27,7 @@ window.addEventListener('load', function () {
 	@@include('forms.js');
 	@@include('../common/checkbox/checkbox.js');
 	@@include('../common/header/header.js');
-	@@include('../common/hero/hero.js');
+
 	@@include('../common/footer/footer.js');
 	@@include('../common/new-projects/new-projects.js');
 	@@include('../common/gallery-slider/gallery-slider.js');
@@ -49,39 +49,53 @@ window.addEventListener('load', function () {
 	}
 
 
-	let productList = document.querySelector('.products__list');
-	if (productList) {
-		let arr = Array.from(productList.children).filter(i => {
-			if (i.previousElementSibling) {
-				if (i.previousElementSibling.classList.contains('big')) {
-					return false
-				} else {
-					return i;
+	let productListAll = document.querySelectorAll('.products__list');
+	if (productListAll.length) {
+		productListAll.forEach(productList => {
+			const addClasses = () => {
+				let arr = Array.from(productList.children).filter(i => {
+					if (i.previousElementSibling) {
+						if (i.previousElementSibling.classList.contains('big')) {
+							return false
+						} else {
+							return i;
+						}
+					} else {
+						return i
+					}
+				})
+					.filter(i => i.classList.contains('big') ? false : i);
+
+				const splitArray = (arr, length) => {
+					let arr2 = []
+					let step = Math.floor(arr.length / length);
+					let count = 0;
+					for (let i = 0; i <= step; i++) {
+						arr2.push([arr[count], arr[count + 1], arr[count + 2]]);
+						count += length;
+					}
+
+					return arr2
 				}
-			} else {
-				return i
-			}
-		})
-		.filter(i => i.classList.contains('big') ? false : i);
 
-		const splitArray = (arr, length) => {
-			let arr2 = []
-			let step = Math.floor(arr.length / length);
-			let count = 0;
-			for (let i = 0; i <= step; i++) {
-				arr2.push([arr[count], arr[count + 1], arr[count + 2]]);
-				count += length;
+				let arrayEl = splitArray(arr, 3);
+
+				arrayEl.forEach(innerArr => {
+					innerArr[0] && innerArr[0].classList.add('first');
+					innerArr[1] && innerArr[1].classList.add('second');
+					innerArr[2] && innerArr[2].classList.add('third');
+				})
 			}
 
-			return arr2
-		}
+			addClasses();
 
-		let arrayEl = splitArray(arr, 3);
+			let observer = new MutationObserver(mutationRecords => {
+				addClasses();
+			});
 
-		arrayEl.forEach(innerArr => {
-			innerArr[0] && innerArr[0].classList.add('first');
-			innerArr[1] && innerArr[1].classList.add('second');
-			innerArr[2] && innerArr[2].classList.add('third');
+			observer.observe(productList, {
+				childList: true
+			});
 		})
 	}
 
@@ -114,6 +128,8 @@ window.addEventListener('DOMContentLoaded', function () {
 			document.querySelector('body').classList.add('no-webp');
 		}
 	});
+
+	@@include('../common/hero/hero.js');
 });
 
 //@@include('plagins/lazy-load.js');

@@ -984,31 +984,7 @@ if(priceSlider) {
         document.body.classList.remove('lock');
     })
 };
-	let singleArticleHero = document.querySelector('.article-single-page .hero');
-if(singleArticleHero) {
-    let titleWhiteText = singleArticleHero.querySelector('.promo-header__title > strong');
-    let bg = singleArticleHero.querySelector('.hero__img');
 
-    // if(!titleWhiteText) {
-    //     let title = singleArticleHero.querySelector('.promo-header__title');
-    //     let text = title.innerText.split(' ');
-    //     let half = Math.round(text.length / 2);
-    //     title.innerHTML = `<strong>${text.slice(0, half).join(' ')}</strong> <strong>${text.slice(half).join(' ')}</strong>`
-    //     console.log(text);
-    //     console.log(half);
-    // }
-    
-    const setBgHeight = () => {
-        if(titleWhiteText) {
-            let height = titleWhiteText.offsetTop + titleWhiteText.clientHeight;
-            bg.style.height = height + 'px';
-        }
-    }
-
-    setBgHeight();
-
-    window.addEventListener('resize', setBgHeight);
-};
 	{
     let footerNavItems = Array.from(document.querySelector('.footer__nav').children);
     if (footerNavItems.length) {
@@ -1306,28 +1282,28 @@ document.addEventListener('keydown', function(e) {
                     })
                 }
 
-                let galleryBlocks = document.querySelectorAll('.gallery');
-                if (galleryBlocks.length) {
-                    galleryBlocks.forEach(gallery => {
-                        let id = gallery.querySelector('[data-to-popup-slide]').dataset.toPopupSlide;
-                        let btn = gallery.querySelector('.popup-link-scroll');
+                // let galleryBlocks = document.querySelectorAll('.gallery');
+                // if (galleryBlocks.length) {
+                //     galleryBlocks.forEach(gallery => {
+                //         let id = gallery.querySelector('[data-to-popup-slide]').dataset.toPopupSlide;
+                //         let btn = gallery.querySelector('.popup-link-scroll');
             
-                        btn.addEventListener('click', (e) => {
-                            e.preventDefault();
-                            const popupName = btn.getAttribute('href').replace('#', '');
-                            const currentPopup = document.getElementById(popupName);
-                            // let topHeight = currentPopup.querySelector(`[data-to-popup-slide="${id}"]`).offsetTop;
-                            // let headHeight = currentPopup.querySelector('.popup-gallery__top').clientHeight + 15;
-                            popupOpen(currentPopup);
-                            dataMain.slideTo(id);
+                //         btn.addEventListener('click', (e) => {
+                //             e.preventDefault();
+                //             const popupName = btn.getAttribute('href').replace('#', '');
+                //             const currentPopup = document.getElementById(popupName);
+                //             // let topHeight = currentPopup.querySelector(`[data-to-popup-slide="${id}"]`).offsetTop;
+                //             // let headHeight = currentPopup.querySelector('.popup-gallery__top').clientHeight + 15;
+                //             popupOpen(currentPopup);
+                //             dataMain.slideTo(id);
             
-                            // currentPopup.scrollTo({
-                            //     top: topHeight - headHeight,
-                            //     behavior: 'smooth',
-                            // });
-                        })
-                    })
-                }
+                //             // currentPopup.scrollTo({
+                //             //     top: topHeight - headHeight,
+                //             //     behavior: 'smooth',
+                //             // });
+                //         })
+                //     })
+                // }
             }
         })
     }
@@ -1559,39 +1535,53 @@ VideoHandler();;
 	}
 
 
-	let productList = document.querySelector('.products__list');
-	if (productList) {
-		let arr = Array.from(productList.children).filter(i => {
-			if (i.previousElementSibling) {
-				if (i.previousElementSibling.classList.contains('big')) {
-					return false
-				} else {
-					return i;
+	let productListAll = document.querySelectorAll('.products__list');
+	if (productListAll.length) {
+		productListAll.forEach(productList => {
+			const addClasses = () => {
+				let arr = Array.from(productList.children).filter(i => {
+					if (i.previousElementSibling) {
+						if (i.previousElementSibling.classList.contains('big')) {
+							return false
+						} else {
+							return i;
+						}
+					} else {
+						return i
+					}
+				})
+					.filter(i => i.classList.contains('big') ? false : i);
+
+				const splitArray = (arr, length) => {
+					let arr2 = []
+					let step = Math.floor(arr.length / length);
+					let count = 0;
+					for (let i = 0; i <= step; i++) {
+						arr2.push([arr[count], arr[count + 1], arr[count + 2]]);
+						count += length;
+					}
+
+					return arr2
 				}
-			} else {
-				return i
-			}
-		})
-		.filter(i => i.classList.contains('big') ? false : i);
 
-		const splitArray = (arr, length) => {
-			let arr2 = []
-			let step = Math.floor(arr.length / length);
-			let count = 0;
-			for (let i = 0; i <= step; i++) {
-				arr2.push([arr[count], arr[count + 1], arr[count + 2]]);
-				count += length;
+				let arrayEl = splitArray(arr, 3);
+
+				arrayEl.forEach(innerArr => {
+					innerArr[0] && innerArr[0].classList.add('first');
+					innerArr[1] && innerArr[1].classList.add('second');
+					innerArr[2] && innerArr[2].classList.add('third');
+				})
 			}
 
-			return arr2
-		}
+			addClasses();
 
-		let arrayEl = splitArray(arr, 3);
+			let observer = new MutationObserver(mutationRecords => {
+				addClasses();
+			});
 
-		arrayEl.forEach(innerArr => {
-			innerArr[0] && innerArr[0].classList.add('first');
-			innerArr[1] && innerArr[1].classList.add('second');
-			innerArr[2] && innerArr[2].classList.add('third');
+			observer.observe(productList, {
+				childList: true
+			});
 		})
 	}
 
@@ -1664,6 +1654,66 @@ window.addEventListener('DOMContentLoaded', function () {
 			document.querySelector('body').classList.add('no-webp');
 		}
 	});
+
+	let hero = document.querySelector('.hero');
+if (hero) {
+    let blackBox = hero.querySelector('.black-box');
+
+    if (document.documentElement.clientWidth < 1268 && blackBox) {
+        let container = document.createElement('div');
+        container.className = 'container';
+        container.append(blackBox);
+        hero.append(container);
+    }
+}
+
+window.addEventListener('load', function () {
+    let hero = document.querySelector('.hero');
+    if (hero) {
+        let blackBox = hero.querySelector('.black-box');
+        let bg = hero.querySelector('.hero__img');
+        let title = hero.querySelector('.promo-header__title');
+        let body = hero.querySelector('.hero__body');
+
+        if (title) {
+            let strong = title.querySelector('strong');
+            if (!strong) {
+                let text = title.innerText.split(' ');
+                if (text.length > 2) {
+                    let half = Math.round(text.length / 2);
+                    title.innerHTML = `<strong>${text.slice(0, half).join(' ')}</strong> <strong>${text.slice(half).join(' ')}</strong>`
+                } else {
+                    title.innerHTML = `<strong>${title.innerText}</strong>`
+                }
+            }
+
+            let strongLast = title.querySelector('strong:last-child');
+            const setMinHeight = () => {
+                if (strongLast) {
+                    body.style.minHeight = bg.clientHeight + strongLast.clientHeight + 'px';
+                }
+            }
+            setMinHeight();
+
+            const setTransfomr = () => {
+                if (document.documentElement.clientWidth >= 1268 && blackBox) {
+                    blackBox.style.top = "0px";
+                    let bottom = Math.round(bg.getBoundingClientRect().bottom);
+                    let top = Math.round(blackBox.getBoundingClientRect().top);
+                    if (top > bottom) {
+                        blackBox.style.transform = `translateY(-${top - bottom}px)`;
+                    } else {
+                        blackBox.style.transform = `translateY(${bottom - top}px)`;
+                    }
+                }
+            }
+
+            setTransfomr();
+
+            window.addEventListener('resize', setMinHeight);
+        }
+    }
+});
 });
 
 //// html example --- <img class="lazy" data-src="https://images.unsplash.com/photo-1606851091851-e8c8c0fca5ba?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" src="img/photo/placeholder.jpg" alt="img">

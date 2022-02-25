@@ -1,12 +1,6 @@
 .property-single-page {
     & .hero {
         background: #EEEEEE;
-
-        & .promo-header__flex-group .black-box {
-            @media (min-width: 1268px) {
-                transform: translateY(34px);
-            }
-        }
     } 
 }
 

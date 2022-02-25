@@ -7,16 +7,20 @@
         min-height: auto;
     }
 
-    & .hero__body {
-        padding-bottom: 0;
+    & .hero {
+        padding-bottom: 0 !important;
 
-        // @media (max-width: $md2+px) {
-        //     padding-top: 0;
-        //     height: 400px;
-        // }
-        // @media (max-width: $md3+px) {
-        //     height: 292px;
-        // }
+        & .hero__body {
+            padding-bottom: 0;
+            min-height: 583px;
+
+            @media (max-width: $md2+px) {
+                min-height: 400px;
+            }
+            @media (max-width: $md3+px) {
+                min-height: 292px;
+            }
+        }
     }
 }
 .article {
@@ -30,6 +34,7 @@
         max-width: 1124px;
 
         & .top {
+            margin-top: 24px;
             margin-bottom: 24px;
             font-size: 12px;
             line-height: 35px;

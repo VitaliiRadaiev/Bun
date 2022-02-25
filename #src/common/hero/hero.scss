@@ -1,5 +1,16 @@
 .hero {
     position: relative;
+    padding-bottom: 70px;
+
+    @media (max-width: $md3+px) {
+        padding-bottom: 50px;
+    }
+
+    & > .container .black-box {
+        @media (max-width: $md1+px) {
+            margin-top: 15px;
+        }
+    }
 
     &.hero_center {
         margin-bottom: 155px;
@@ -57,30 +68,44 @@
         @media (max-width: $md3+px) {
             height: 245px;
         }
+
+        &:before {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0) 0%,
+                rgba(0, 0, 0, 0.65) 100%
+            ); 
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#40000000',GradientType=0 ); /* IE6-9 */
+        }
     }
 
     &__body {
         display: flex;
         flex-direction: column;
         padding-top: 70px;
-        padding-bottom: 71px;
         color: #fff;
         position: relative;
         z-index: 2;
-        min-height: 653px;
+        min-height: 581px;
 
         @media (max-width: $md1+px) {
-            min-height: 827px;
+            padding-bottom: 0;
         }
 
         @media (max-width: $md2+px) {
-            min-height: 646px;
+            min-height: 399px;
         }
 
         @media (max-width: $md3+px) {
-            min-height: 492px;
+            min-height: 290px;
             padding-top: 50px;
-            padding-bottom: 50px;
         }
 
         & .breadcrumbs {
@@ -101,13 +126,30 @@
         }
 
         & .promo-header__title {
-            min-height: 160px;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
+            transform: translateY(0.17em);
 
-            @media (max-width: $md3+px) {
-                min-height: 92px;
+            @media (min-width: 1268px) {
+                max-width: 723px;
+            }
+        }
+
+        & .promo-header__flex-group {
+            @media (min-width: 1268px) {
+                flex-wrap: nowrap;
+            }
+
+            & .black-box {
+                @media (min-width: 1268px) {
+                    max-width: 622px;
+                    min-height: 116px;
+                    padding-top: 20px;
+                    padding-bottom: 20px;
+                    position: relative;
+                    top: 46px;
+                }
             }
         }
     }
@@ -143,15 +185,4 @@
         }
     }
 
-    & .promo-header__flex-group {
-        & .black-box {
-            @media (min-width: 1268px) {
-                max-width: 622px;
-                min-height: 116px;
-                padding-top: 20px;
-                padding-bottom: 20px;
-                transform: translateY(49px);
-            }
-        }
-    }
 }

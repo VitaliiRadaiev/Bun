@@ -440,11 +440,10 @@
         }
     }
     &__img {
-        padding-bottom: 59.4%;
+        padding-bottom: min(240px, 63.4%);
 
         @media (max-width: $md4+px) {
             padding-bottom: 0;
-            min-height: 220px;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
@@ -465,6 +464,7 @@
         padding: 0px 20px 0px;
         color: #ffffff;
         width: 100%;
+        transform: translateY(8%);
 
         @media (max-width: $md4+px) {
             position: relative;

@@ -21,7 +21,7 @@
         letter-spacing: 0.2px;
         line-height: 18px;
         text-transform: uppercase;
-        font-weight: 700;
+        font-weight: 500;
         color: #000;
 
         @media (max-width: $md3+px) {
@@ -40,5 +40,8 @@
             background-color: $mainColor;
             color: #fff;
         }
+    }
+    &__link2 {
+        white-space: nowrap;
     }
 }

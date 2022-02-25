@@ -81,7 +81,8 @@
     }
 
     &__total {
-        display: flex;
+        display: grid;
+        grid-template-columns: auto 1fr;
         font-weight: 400;
         font-size: 13px;
         line-height: 18px;
