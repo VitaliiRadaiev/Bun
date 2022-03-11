@@ -364,8 +364,8 @@
         background-color: #fff;
         transform: translateX(-50%);
         width: 100%;
-        max-width: 980px;
-        padding: 40px 79px 10px 60px;
+        max-width: 1140px;
+        padding: 40px 50px 10px 50px;
         border-top: 1px solid rgba(#000, 0.1);
         visibility: hidden;
         transition: all 0.3s ease;
@@ -490,10 +490,10 @@
     &__list {
         display: flex;
         flex-wrap: wrap;
-        margin: 0 -20px;
+        margin: 0 -10px;
 
         & > li {
-            padding: 0 20px;
+            padding: 0 10px;
             flex: 0 1 33.3333%;
             margin-bottom: 30px;
         }
@@ -515,9 +515,6 @@
     @media (min-width: 1024px) {
         &:hover {
             box-shadow: 0 11px 55px 10px rgba(0, 0, 0, 0.07), 0 13px 18px -8px rgba(0, 0, 0, 0.15);
-            & .sub-menu-card__line {
-                width: 100%;
-            }
         }
     }
 
@@ -538,11 +535,12 @@
 
     &__text-wrap {
         position: relative;
-        padding: 14px 43px 19px 20px;
+        padding: 14px 20px 19px 20px;
         color: $textColor;
         font-size: 12px;
         line-height: 1.2em;
         flex: 1 1 auto;
+
         &:before {
             position: absolute;
             font-family: "icomoon";
@@ -550,7 +548,7 @@
             content: "\e90e";
             color: $mainColor2;
             bottom: 16px;
-            right: 22px;
+            right: 15px;
             font-size: 18px;
             font-weight: 400;
         }
@@ -562,5 +560,6 @@
     }
 
     &__subtitle {
+        padding-right: 20px;
     }
 }

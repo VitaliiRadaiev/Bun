@@ -31,17 +31,16 @@
         }
     }
 
+    
+    & .gallery-slider-hide {
+        position: absolute;
+        pointer-events: none;
+        visibility: hidden;
+    }
+
     & .swiper-slide {
         width: 159px;
         height: 95px;
-
-        @media (min-width: 992px) {
-            &:hover {
-                &:before {
-                    width: 100%;
-                }
-            }
-        }
 
         &:before {
             position: absolute;

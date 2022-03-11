@@ -602,6 +602,7 @@
 .vacancies-cta {
     padding-top: 62.5px;
     padding-bottom: 1px;
+    overflow: hidden;
     @media (max-width: $md3+px) {
         padding-top: 50px;
     }

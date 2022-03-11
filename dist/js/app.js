@@ -1051,18 +1051,38 @@ if(priceSlider) {
             });
 
         } else {
-            let dataSlider = new Swiper(slider.querySelector('.swiper-container'), {
+            let sliderContainer = slider.querySelector('.swiper-container');
+            
+            let hideSlier = document.createElement('div');
+            hideSlier.className = "gallery-slider-hide";
+            hideSlier.append(sliderContainer.cloneNode(true))
+
+            slider.append(hideSlier);
+
+            let dataSlider = new Swiper(sliderContainer, {
                 observer: true,
                 observeParents: true,
                 slidesPerView: 'auto',
                 spaceBetween: 18,
                 speed: 800,
                 freeMode: true,
+            });
+
+            let hideDataSlider = new Swiper(hideSlier.querySelector('.swiper-container'), {
+                observer: true,
+                observeParents: true,
+                slidesPerView: 1,
+                spaceBetween: 18,
+                speed: 800,
                 pagination: {
                     el: slider.querySelector('.swiper-pagination'),
                     type: "fraction",
                 },
+                thumbs: {
+                    swiper: dataSlider,
+                },
             });
+
         }
 
     }
@@ -1282,28 +1302,6 @@ document.addEventListener('keydown', function(e) {
                     })
                 }
 
-                // let galleryBlocks = document.querySelectorAll('.gallery');
-                // if (galleryBlocks.length) {
-                //     galleryBlocks.forEach(gallery => {
-                //         let id = gallery.querySelector('[data-to-popup-slide]').dataset.toPopupSlide;
-                //         let btn = gallery.querySelector('.popup-link-scroll');
-            
-                //         btn.addEventListener('click', (e) => {
-                //             e.preventDefault();
-                //             const popupName = btn.getAttribute('href').replace('#', '');
-                //             const currentPopup = document.getElementById(popupName);
-                //             // let topHeight = currentPopup.querySelector(`[data-to-popup-slide="${id}"]`).offsetTop;
-                //             // let headHeight = currentPopup.querySelector('.popup-gallery__top').clientHeight + 15;
-                //             popupOpen(currentPopup);
-                //             dataMain.slideTo(id);
-            
-                //             // currentPopup.scrollTo({
-                //             //     top: topHeight - headHeight,
-                //             //     behavior: 'smooth',
-                //             // });
-                //         })
-                //     })
-                // }
             }
         })
     }

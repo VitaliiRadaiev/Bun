@@ -1,0 +1,17 @@
+.page404 {
+    padding: 100px 0;
+    text-align: center;
+    &__title {
+        font-size: 160px;
+        font-weight: 700;
+        margin-top: 0;
+
+        @media (max-width: $md3+px) {
+            font-size: 90px;
+        }
+    }
+}
+.container {
+}
+.btn-default {
+}

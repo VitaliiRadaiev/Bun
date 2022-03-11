@@ -4,6 +4,12 @@
         & .hero__img {
             height: 100%;
         }
+
+        & .hero__body {
+            @media (min-width: 992px) {
+                min-height: 431px;
+            }
+        }
     }
 
     & .products.products_listing {
