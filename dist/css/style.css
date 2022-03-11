@@ -6975,6 +6975,12 @@ table td img[data-tooltip-text] {
   font-size: 160px;
   font-weight: 700;
   margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.page404__subtitle {
+  font-size: 40px;
+  margin-bottom: 50px;
 }
 
 @media (min-width: 401px) {
@@ -8867,6 +8873,11 @@ table td img[data-tooltip-text] {
 
   .page404__title {
     font-size: 90px;
+  }
+
+  .page404__subtitle {
+    font-size: 30px;
+    margin-bottom: 35px;
   }
 }
 
