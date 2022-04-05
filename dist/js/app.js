@@ -1676,8 +1676,14 @@ window.addEventListener('load', function () {
         if (title) {
             let strong = title.querySelector('strong');
             if (!strong) {
+                let brAll = title.querySelectorAll('br');
+                if(brAll) {
+                    brAll.forEach(br => {
+                        br.remove();
+                    })
+                }
                 let text = title.innerText.split(' ');
-                if (text.length > 2) {
+                if (text.length > 1) {
                     let half = Math.round(text.length / 2);
                     title.innerHTML = `<strong>${text.slice(0, half).join(' ')}</strong> <strong>${text.slice(half).join(' ')}</strong>`
                 } else {

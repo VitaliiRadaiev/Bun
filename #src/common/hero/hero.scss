@@ -112,6 +112,8 @@
             position: absolute;
             top: 36px;
             left: 40px;
+            width: 100%;
+            max-width: 600px;
 
             @media (max-width: 400px) {
                 left: 20px;

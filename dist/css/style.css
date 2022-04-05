@@ -3085,6 +3085,12 @@ textarea {
   color: #445870;
 }
 
+textarea.input {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  resize: none;
+}
+
 .link-icon-right {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -3825,6 +3831,14 @@ table td img[data-tooltip-text] {
 .footer__bottom-text {
   position: relative;
   z-index: 2;
+}
+
+.footer__bottom-text a {
+  color: #fff;
+}
+
+.footer__bottom-text a:hover {
+  text-decoration: underline;
 }
 
 .checkbox-wrap input[type=checkbox],
@@ -4732,6 +4746,8 @@ table td img[data-tooltip-text] {
   position: absolute;
   top: 36px;
   left: 40px;
+  width: 100%;
+  max-width: 600px;
 }
 
 .hero__body .filter {
@@ -5350,6 +5366,42 @@ table td img[data-tooltip-text] {
   margin-left: auto;
 }
 
+.cta .wpcf7-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.cta .wpcf7-form > p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.cta .wpcf7-response-output {
+  color: #fff;
+}
+
+.cta .wpcf7-form-control-wrap {
+  display: block;
+}
+
+.cta .wpcf7-not-valid-tip {
+  position: absolute;
+  top: calc(100% + 3px);
+  left: 0;
+  width: 100%;
+  font-size: 12px;
+}
+
 .cta__body {
   color: #fff;
   max-width: 1040px;
@@ -5366,6 +5418,19 @@ table td img[data-tooltip-text] {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 42.3%;
           flex: 0 0 42.3%;
+}
+
+.cta__col-2 .form__item {
+  height: 100%;
+}
+
+.cta__col-2 .form__item textarea.input {
+  height: 100%;
+  border-radius: 0px 40px 0px 0px;
+}
+
+.cta__col-2 .form__item .wpcf7-form-control-wrap {
+  height: 100%;
 }
 
 .cta__title {
@@ -8560,6 +8625,12 @@ table td img[data-tooltip-text] {
             flex: 0 1 100%;
   }
 
+  .products.articles_listing .products__list > li.big {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+  }
+
   .products__head {
     margin-bottom: 20px;
   }
@@ -9005,7 +9076,6 @@ table td img[data-tooltip-text] {
   }
 
   .card-product__img {
-    padding-bottom: 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -9018,8 +9088,8 @@ table td img[data-tooltip-text] {
             justify-content: flex-end;
   }
 
-  .card-product__head {
-    position: relative;
+  .card-product__title {
+    font-size: 26px;
   }
 
   .vacancies__list > li:not(:last-child) {
@@ -9126,6 +9196,10 @@ table td img[data-tooltip-text] {
 
   .characteristics__col-2 {
     padding-left: 20px;
+  }
+
+  .card__title {
+    font-size: 26px;
   }
 }
 

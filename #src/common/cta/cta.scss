@@ -20,6 +20,32 @@
         margin-left: auto;
     }
 
+    & .wpcf7-form {
+        display: flex;
+        flex-direction: column;
+
+        & > p {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    & .wpcf7-response-output {
+        color: #fff;
+    }
+
+    & .wpcf7-form-control-wrap {
+        display: block;
+    }
+
+    & .wpcf7-not-valid-tip {
+        position: absolute;
+        top: calc(100% + 3px);
+        left: 0;
+        width: 100%;
+        font-size: 12px;
+    }
+
     &__body {
         color: #fff;
         max-width: 1040px;
@@ -32,7 +58,7 @@
 
     &__col-1 {
         flex: 1 1 auto;
-  
+
         @media (min-width: 768px) {
             margin-right: 28px;
 
@@ -41,6 +67,19 @@
 
     &__col-2 {
         flex: 0 0 42.3%;
+
+        & .form__item {
+            height: 100%;
+
+            & textarea.input {
+                height: 100%;
+                border-radius: 0px 40px 0px 0px;
+            }
+
+            & .wpcf7-form-control-wrap  {
+                height: 100%;
+            }
+        }
     }
 
     &__title {

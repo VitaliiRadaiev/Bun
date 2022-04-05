@@ -71,6 +71,10 @@
         color: #fff;
         text-transform: uppercase;
         transform: translateY(8%);
+
+        @media (max-width: $md4+px) {
+            font-size: 26px;
+        }
     }
 
     &__group {

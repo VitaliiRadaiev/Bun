@@ -471,7 +471,10 @@ button.btn-default {
 	}
 }
 
-.textarea {
+textarea.input {
+	padding-top: 30px;
+	padding-bottom: 30px;
+	resize: none;
 }
 
 .link {

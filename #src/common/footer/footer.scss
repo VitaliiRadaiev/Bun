@@ -91,6 +91,7 @@
         font-size: 13px;
         line-height: 18px;
         margin-bottom: 26px;
+        
     }
 
     &__link {
@@ -293,6 +294,14 @@
 
             & > div:not(.footer__bottom-text-mobile) {
                 font-size: 0;
+            }
+        }
+
+        & a {
+            color: #fff;
+
+            &:hover {
+                text-decoration: underline;
             }
         }
     }
