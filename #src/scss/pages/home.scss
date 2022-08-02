@@ -215,7 +215,8 @@
 
         & > li img {
             @media (min-width: 992px) {
-                height: 20px;
+                height: auto;
+                width: 20px;
             }
         }
     }

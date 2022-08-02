@@ -36,6 +36,7 @@
                     slidesPerView: 1,
                     speed: 800,
                     preloadImages: false,
+                    autoHeight: true,
                     lazy: {
                         loadPrevNext: true,
                     },
@@ -58,7 +59,11 @@
                         if(!item.classList.contains('_hasEvent')) {
                             let id = item.dataset.toPopupSlide;
                             item.addEventListener('click', () => {
-                                dataMain.slideTo(id);
+                                if(id === 'platteground') {
+                                    dataMain.slideTo(popupGalleryMain.querySelector('.swiper-wrapper').children.length - 1);
+                                } else {
+                                    dataMain.slideTo(id);
+                                }
                             })
                             item.classList.add('_hasEvent')
                         }

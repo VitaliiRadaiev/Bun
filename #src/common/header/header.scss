@@ -19,6 +19,12 @@
             padding-right: 40px;
         }
 
+        @media (max-width: 1023.98px) {
+            & .header__btn-gruop {
+                display: none;
+            }
+        }
+
         @media (max-width: 400px) {
             padding-left: 20px;
             padding-right: 20px;
@@ -33,11 +39,13 @@
         width: 100%;
         max-width: 79px;
         margin-right: 25px;
+        height: 35px;
 
         & img,
         & svg {
             width: 100%;
             height: auto;
+            max-height: 35px;
         }
     }
 
@@ -45,6 +53,12 @@
         @media (min-width: 1024px) {
             margin-right: auto;
             margin-left: auto;
+        }
+
+        @media (max-width: 1023.98px) {
+            & .header__btn-gruop {
+                display: flex;
+            }
         }
     }
 

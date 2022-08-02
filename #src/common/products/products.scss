@@ -401,10 +401,23 @@
                 &.second {
                     & .card-product__head,
                     & .card__text-wrap {
-                        text-align: center;
+                        text-align: center !important;
                     }
                 }
                 &.third {
+                    & .card-product__head,
+                    & .card__text-wrap {
+                        text-align: right !important;
+                    }
+                }
+
+                &:nth-child(3n + 2) {
+                    & .card-product__head,
+                    & .card__text-wrap {
+                        text-align: center;
+                    }
+                }
+                &:nth-child(3n + 3) {
                     & .card-product__head,
                     & .card__text-wrap {
                         text-align: right;
@@ -521,6 +534,7 @@
         & img {
             max-height: 15px;
             width: auto;
+            max-width: 15px;
             margin-right: 10px;
         }
     }

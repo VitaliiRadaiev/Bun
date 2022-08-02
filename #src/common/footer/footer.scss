@@ -2,6 +2,7 @@
     background-color: #24272a;
     color: #fff;
     position: relative;
+    overflow: hidden;
 
     &__body {
 
@@ -237,6 +238,14 @@
                 margin-bottom: 0;
             }
         }
+
+        & a {
+            color: #fff;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
 
     &__bottom-body {
@@ -297,13 +306,7 @@
             }
         }
 
-        & a {
-            color: #fff;
 
-            &:hover {
-                text-decoration: underline;
-            }
-        }
     }
 
     &__bottom-text-mobile {

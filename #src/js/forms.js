@@ -1,132 +1,69 @@
-// //let btn = document.querySelectorAll('button[type="submit"],input[type="submit"]');
-// let forms = document.querySelectorAll('form');
-// if (forms.length > 0) {
-// 	for (let index = 0; index < forms.length; index++) {
-// 		const el = forms[index];
-// 		el.addEventListener('submit', form_submit);
-// 	}
-// }
-// function form_submit(e) {
-// 	let btn = event.target;
-// 	let form = btn.closest('form');
-// 	let message = form.getAttribute('data-message');
-// 	let error = form_validate(form);
-// 	if (error == 0) {
-// 		//SendForm
-// 		form_clean(form);
-// 		if (message) {
-// 			popup_open('message-' + message);
-// 			e.preventDefault();
-// 		}
-// 	} else {
-// 		let form_error = form.querySelectorAll('._error');
-// 		if (form_error && form.classList.contains('_goto-error')) {
-// 			_goto(form_error[0], 1000, 50);
-// 		}
-// 		event.preventDefault();
-// 	}
-// }
-// function form_validate(form) {
-// 	let error = 0;
-// 	let form_req = form.querySelectorAll('._req');
-// 	if (form_req.length > 0) {
-// 		for (let index = 0; index < form_req.length; index++) {
-// 			const el = form_req[index];
-// 			if (!_is_hidden(el)) {
-// 				error += form_validate_input(el);
-// 			}
-// 		}
-// 	}
-// 	return error;
-// }
-// function form_validate_input(input) {
-// 	let error = 0;
-// 	let input_g_value = input.getAttribute('data-value');
+//SlideToggle
+let _slideUp = (target, duration = 500) => {
+	target.style.transitionProperty = 'height, margin, padding';
+	target.style.transitionDuration = duration + 'ms';
+	target.style.height = target.offsetHeight + 'px';
+	target.offsetHeight;
+	target.style.overflow = 'hidden';
+	target.style.height = 0;
+	target.style.paddingTop = 0;
+	target.style.paddingBottom = 0;
+	target.style.marginTop = 0;
+	target.style.marginBottom = 0;
+	window.setTimeout(() => {
+		target.style.display = 'none';
+		target.style.removeProperty('height');
+		target.style.removeProperty('padding-top');
+		target.style.removeProperty('padding-bottom');
+		target.style.removeProperty('margin-top');
+		target.style.removeProperty('margin-bottom');
+		target.style.removeProperty('overflow');
+		target.style.removeProperty('transition-duration');
+		target.style.removeProperty('transition-property');
+		target.classList.remove('_slide');
+	}, duration);
+}
+let _slideDown = (target, duration = 500) => {
+	target.style.removeProperty('display');
+	let display = window.getComputedStyle(target).display;
+	if (display === 'none')
+		display = 'block';
 
-// 	if (input.getAttribute("name") == "email" || input.classList.contains("_email")) {
-// 		if (input.value != input_g_value) {
-// 			let em = input.value.replace(" ", "");
-// 			input.value = em;
-// 		}
-// 		if (email_test(input) || input.value == input_g_value) {
-// 			form_add_error(input);
-// 			error++;
-// 		} else {
-// 			form_remove_error(input);
-// 		}
-// 	} else if (input.getAttribute("type") == "checkbox" && input.checked == false) {
-// 		form_add_error(input);
-// 		error++;
-// 	} else {
-// 		if (input.value == '' || input.value == input_g_value) {
-// 			form_add_error(input);
-// 			error++;
-// 		} else {
-// 			form_remove_error(input);
-// 		}
-// 	}
-// 	return error;
-// }
-// function form_add_error(input) {
-// 	input.classList.add('_error');
-// 	input.parentElement.classList.add('_error');
-
-// 	let input_error = input.parentElement.querySelector('.form__error');
-// 	if (input_error) {
-// 		input.parentElement.removeChild(input_error);
-// 	}
-// 	let input_error_text = input.getAttribute('data-error');
-// 	if (input_error_text && input_error_text != '') {
-// 		input.parentElement.insertAdjacentHTML('beforeend', '<div class="form__error">' + input_error_text + '</div>');
-// 	}
-// }
-// function form_remove_error(input) {
-// 	input.classList.remove('_error');
-// 	input.parentElement.classList.remove('_error');
-
-// 	let input_error = input.parentElement.querySelector('.form__error');
-// 	if (input_error) {
-// 		input.parentElement.removeChild(input_error);
-// 	}
-// }
-// function form_clean(form) {
-// 	let inputs = form.querySelectorAll('input,textarea');
-// 	for (let index = 0; index < inputs.length; index++) {
-// 		const el = inputs[index];
-// 		el.parentElement.classList.remove('_focus');
-// 		el.classList.remove('_focus');
-// 		el.value = el.getAttribute('data-value');
-// 	}
-// 	let checkboxes = form.querySelectorAll('.checkbox__input');
-// 	if (checkboxes.length > 0) {
-// 		for (let index = 0; index < checkboxes.length; index++) {
-// 			const checkbox = checkboxes[index];
-// 			checkbox.checked = false;
-// 		}
-// 	}
-// 	let selects = form.querySelectorAll('select');
-// 	if (selects.length > 0) {
-// 		for (let index = 0; index < selects.length; index++) {
-// 			const select = selects[index];
-// 			const select_default_value = select.getAttribute('data-default');
-// 			select.value = select_default_value;
-// 			select_item(select);
-// 		}
-// 	}
-// }
-
-// let viewPass = document.querySelectorAll('.form__viewpass');
-// for (let index = 0; index < viewPass.length; index++) {
-// 	const element = viewPass[index];
-// 	element.addEventListener("click", function (e) {
-// 		if (element.classList.contains('_active')) {
-// 			element.parentElement.querySelector('input').setAttribute("type", "password");
-// 		} else {
-// 			element.parentElement.querySelector('input').setAttribute("type", "text");
-// 		}
-// 		element.classList.toggle('_active');
-// 	});
-// }
+	target.style.display = display;
+	let height = target.offsetHeight;
+	target.style.overflow = 'hidden';
+	target.style.height = 0;
+	target.style.paddingTop = 0;
+	target.style.paddingBottom = 0;
+	target.style.marginTop = 0;
+	target.style.marginBottom = 0;
+	target.offsetHeight;
+	target.style.transitionProperty = "height, margin, padding";
+	target.style.transitionDuration = duration + 'ms';
+	target.style.height = height + 'px';
+	target.style.removeProperty('padding-top');
+	target.style.removeProperty('padding-bottom');
+	target.style.removeProperty('margin-top');
+	target.style.removeProperty('margin-bottom');
+	window.setTimeout(() => {
+		target.style.removeProperty('height');
+		target.style.removeProperty('overflow');
+		target.style.removeProperty('transition-duration');
+		target.style.removeProperty('transition-property');
+		target.classList.remove('_slide');
+	}, duration);
+}
+let _slideToggle = (target, duration = 500) => {
+	if (!target.classList.contains('_slide')) {
+		target.classList.add('_slide');
+		if (window.getComputedStyle(target).display === 'none') {
+			return _slideDown(target, duration);
+		} else {
+			return _slideUp(target, duration);
+		}
+	}
+}
+//========================================
 
 
 //Select
@@ -408,102 +345,4 @@ function inputs_init(inputs) {
 		}
 	}
 }
-// function input_placeholder_add(input) {
-// 	const input_g_value = input.getAttribute('data-value');
-// 	if (input.value == '' && input_g_value != '') {
-// 		input.value = input_g_value;
-// 	}
-// }
-// function input_focus_add(input) {
-// 	input.classList.add('_focus');
-// 	input.parentElement.classList.add('_focus');
-// }
-// function input_focus_remove(input) {
-// 	input.classList.remove('_focus');
-// 	input.parentElement.classList.remove('_focus');
-// }
-// function input_clear_mask(input, input_g_value) {
-// 	input.inputmask.remove();
-// 	input.value = input_g_value;
-// 	input_focus_remove(input);
-// }
 
-// ==  QUANTITY =====================================================
-let quantityButtons = document.querySelectorAll('.quantity__button');
-if (quantityButtons.length > 0) {
-	for (let index = 0; index < quantityButtons.length; index++) {
-		const quantityButton = quantityButtons[index];
-		quantityButton.addEventListener("click", function (e) {
-			let value = parseInt(quantityButton.closest('.quantity').querySelector('input').value);
-			if (quantityButton.classList.contains('quantity__button_plus')) {
-				value++;
-			} else {
-				value = value - 1;
-				if (value < 1) {
-					value = 1
-				}
-			}
-			quantityButton.closest('.quantity').querySelector('input').value = value;
-		});
-	}
-}
-// == // QUANTITY =====================================================
-
-// == PRICE SLIDER =====================================================
-let priceSlider = document.querySelector('.price-filter');
-
-if(priceSlider) {
-	let inputNumFrom = document.getElementById('priceStart');
-	let inputNumTo = document.getElementById('priceEnd');
-	let value = document.querySelector('.values-price-filter');
-
-	let min = value.dataset.min;
-	let max = value.dataset.max;
-	let numStart = value.dataset.start;
-	let numEnd = value.dataset.end;
-	noUiSlider.create(priceSlider, {
-		start: [+numStart, +numEnd],  
-		connect: true,
-		tooltips:[wNumb({decimals: 0, thousand: ','}) , wNumb({decimals: 0, thousand: ','})], 
-		range: {
-			'min': [+min],
-			'1%': [100,100],
-			'max': [+max],
-		}
-	});
-
-	priceSlider.noUiSlider.on('update', function (values, handle) {
-
-	    var value = values[handle];
-
-	    if (handle) {
-	        inputNumTo.value = Math.round(value);
-	    } else {
-	        inputNumFrom.value = Math.round(value);
-	    }
-	});
-
-	inputNumTo.onchange = function() {
-		setPriceValues()
-	}
-
-	inputNumFrom.onchange = function() {
-		setPriceValues()
-	}
-
-	function setPriceValues() {
-		let priceStartValue;
-		let priceEndValue;
-		if(inputNumFrom.value != '') {
-			priceStartValue = inputNumFrom.value;
-		}
-
-		if(inputNumTo.value != '') {
-			priceEndValue = inputNumTo.value;
-		}
-
-		  priceSlider.noUiSlider.set([priceStartValue, priceEndValue])
-	}
-}
-
-// == // PRICE SLIDER =====================================================
