@@ -1,0 +1,186 @@
+.reparatie {
+    padding: 100px 0;
+    font-weight: 400;
+	font-size: 13px;
+	line-height: 1.92em;
+
+    @media (max-width: $md3+px) {
+        padding: 50px 0;
+    }
+    & > .container {
+        max-width: 980px;
+
+        & p {
+            margin-bottom: 1.96em;
+        }
+    }
+    &__title {
+        font-family: $berninoSansNarrow;
+		font-size: 40px;
+		font-weight: 700;
+		line-height: 1.4em;
+		text-transform: uppercase;
+		margin-top: 0;
+        text-align: center;
+        margin-bottom: 80px;
+
+        @media (max-width: $md3+px) {
+            margin-bottom: 40px;
+        }
+
+        & + p {
+            margin-bottom: 20px;
+        }
+    }
+    & .gform_wrapper {
+        text-align: left;
+        & .gform_heading {
+            width: 100%;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 4rem;
+
+            & .gform_title {
+                font-family: $berninoSansNarrow;
+                font-size: 35px;
+                font-weight: 700;
+                line-height: 1.228em;
+                margin-top: 0;
+                margin-bottom: 0.5em;
+                @media (max-width: $md3+px) {
+                    font-size: 30px;
+                }
+            }
+        }
+
+        & .gform_body {
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 40px;
+
+            & .gform_fields {
+                display: flex !important;
+                flex-wrap: wrap;
+                gap: 30px 20px;
+            }
+
+            & .gfield {
+                flex: 0 1 100%;
+
+                &.gfield--width-half {
+                    @media (min-width: 992px) {
+                        flex: 0 1 calc(50% - 10px);
+                    }
+                }
+                & input {
+                    display: flex;
+                    -webkit-box-align: center;
+                    -ms-flex-align: center;
+                    align-items: center;
+                    width: 100% !important;
+                    min-height: 42px;
+                    background: #fff;
+                    border: 1px solid #e0e7ee;
+                    border-radius: 5px;
+                    padding: 10px 36px 10px 28px;
+                    cursor: pointer;
+                    font-weight: 700;
+                    font-size: 11px;
+                    line-height: 18px;
+                    color: #445870;
+                }
+
+                & textarea {
+                    display: flex;
+                    -webkit-box-align: center;
+                    -ms-flex-align: center;
+                    align-items: center;
+                    width: 100%;
+                    height: 320px;
+                    background: #fff;
+                    border: 1px solid #e0e7ee;
+                    border-radius: 5px;
+                    padding: 10px 36px 10px 28px;
+                    cursor: pointer;
+                    font-weight: 700;
+                    font-size: 11px;
+                    line-height: 18px;
+                    color: #445870;
+                    resize: none;
+                }
+            }
+
+            & .ginput_complex {
+                margin-left: 0;
+                margin-right: 0;
+                gap: 30px 20px;
+
+                & > * {
+                    margin: 0 !important;
+                    padding: 0 !important;
+                    flex: 0 1 100%;
+                    display: flex;
+                    flex-direction: column;
+
+                    & > label {
+                        order: -1;
+                        padding: 0 !important;
+                        margin-bottom: 5px;
+                    }
+
+                    @media (min-width: 992px) {
+                        flex: 0 1 calc(50% - 10px);
+                    }
+
+                    &.ginput_full {
+                        flex: 0 1 100%;
+                    }
+
+                }
+            }
+        }
+
+        & .gform_footer {
+            margin-top: 0 !important;
+            padding: 0 !important;
+            text-align: right;
+            display: block !important;
+            max-width: 900px;
+            margin-left: auto !important;
+            margin-right: auto !important;
+    
+            & .gform_button  {
+                font-family: $mainFontFamily;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                min-width: 134px;
+                min-height: 45px;
+                border-radius: 3px;
+                padding: 10px 25px;
+                font-size: 11px;
+                font-weight: 500;
+                line-height: 1.2em;
+                transition: all 0.3s ease;
+                text-transform: uppercase;
+                white-space: nowrap;
+                color: #fff;
+                background-color: $mainColor;
+                border-color: $mainColor !important;
+                border: 2px solid;
+                cursor: pointer;
+                margin: 0;
+    
+                @media (min-width: 992px) {
+                    &:hover {
+                        background-color: $hover;
+                        border-color: $hover !important;
+                    }
+                }
+        
+            }
+        }
+    }
+}

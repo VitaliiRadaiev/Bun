@@ -121,8 +121,7 @@
 				min-width: 0;
 
 				@media (max-width: $md3+px) {
-					height: auto;
-					max-height: 400px;
+					height: 400px;
 					display: flex;
 					justify-content: center;
 					align-items: center;

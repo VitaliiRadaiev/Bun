@@ -98,23 +98,6 @@ body {
 	position: relative;
 	min-height: 100%;
 
-	&::-webkit-scrollbar {
-		width: 2px;
-		height: 2px;
-	}
-	&::-webkit-scrollbar-thumb {
-		background: #24272a;
-		border-radius: 10px;
-
-	}
-	&::-webkit-scrollbar-thumb:hover {
-		background: #b3afb3;
-	}
-	&::-webkit-scrollbar-track {
-		background: #e7e7e7;
-		border-radius: 10px;
-		box-shadow: inset 0px 0px 0px 0px #f0f0f0;
-	}
 
 	&.lock {
 		overflow: hidden;
@@ -899,5 +882,6 @@ table {
 @import "pages/page404";
 @import "pages/contact";
 @import "pages/guides";
+@import "pages/reparatie";
 
 // ==== AND PAGES =====================================================

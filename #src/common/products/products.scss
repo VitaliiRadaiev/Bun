@@ -311,7 +311,7 @@
                                 }
 
                                 & .card__text-wrap {
-                                    text-align: left;
+                                    text-align: right;
                                 }
                             }
                         }
@@ -394,10 +394,22 @@
                             margin-left: 250px;
                         }
                     }
+
+                    & + li {
+                        & .card-product__head {
+                            text-align: right;
+                        }
+                    }
                 }
             }
 
             @media (min-width: 992px) {
+                &.first {
+                    & .card-product__head,
+                    & .card__text-wrap {
+                        text-align: left !important;
+                    }
+                }
                 &.second {
                     & .card-product__head,
                     & .card__text-wrap {

@@ -319,12 +319,13 @@ function createTabs(containerName = false, triggersName = false, tabsName = fals
 	{
     let popuItems = document.querySelectorAll('.popup');
     if(popuItems.length) {
+        window.popupGalleries = {};
         popuItems.forEach(popup => {
             let popupGalleryMain = popup.querySelector('.popup-gallery-slider__main');
             let popupGalleryThumb = popup.querySelector('.popup-gallery-slider__thumb');
             let list = popup.querySelector('.popup-gallery-list');
             let totalImages = popup.querySelector('.head-gallery__total');
-           
+
             if(totalImages) {
                 let num;
                 if(popupGalleryThumb) {
@@ -347,6 +348,7 @@ function createTabs(containerName = false, triggersName = false, tabsName = fals
                     watchSlidesVisibility: true,
                     watchSlidesProgress: true,
                 });
+                
                 let dataMain = new Swiper(popupGalleryMain.querySelector('.swiper-container'), {
                     spaceBetween: 18,
                     observer: true,
@@ -370,24 +372,32 @@ function createTabs(containerName = false, triggersName = false, tabsName = fals
                         type: "fraction",
                     },
                 });
-            
-                let openTriggersItems = document.querySelectorAll('[data-to-popup-slide]');
-                if(openTriggersItems.length) {
-                    openTriggersItems.forEach(item => {
-                        if(!item.classList.contains('_hasEvent')) {
-                            let id = item.dataset.toPopupSlide;
-                            item.addEventListener('click', () => {
-                                if(id === 'platteground') {
-                                    dataMain.slideTo(popupGalleryMain.querySelector('.swiper-wrapper').children.length - 1);
-                                } else {
-                                    dataMain.slideTo(id);
-                                }
-                            })
-                            item.classList.add('_hasEvent')
+
+                window.popupGalleries[popup.id] = dataMain;
+            }
+        })
+    }
+
+    let openTriggersItems = document.querySelectorAll('[data-to-popup-slide]');
+    if(openTriggersItems.length) {
+        console.log(window.popupGalleries);
+
+        openTriggersItems.forEach(item => {
+            if(!item.classList.contains('_hasEvent')) {
+                let galleryId = item.getAttribute('href').match(/#\w+$/gi).join('').replace('#', '');
+                let id = item.dataset.toPopupSlide;
+                let slider = window.popupGalleries[galleryId];
+
+                if(slider) {
+                    item.addEventListener('click', () => {
+                        if(id === 'platteground') {
+                            slider.slideTo(popupGalleryMain.querySelector('.swiper-wrapper').children.length - 1);
+                        } else {
+                            slider.slideTo(id);
                         }
                     })
+                    item.classList.add('_hasEvent')
                 }
-
             }
         })
     }

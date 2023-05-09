@@ -3,29 +3,8 @@ window.addEventListener('DOMContentLoaded', function () {
 		document.body.classList.add('_is-mobile');
 	}
 
-    document.head.insertAdjacentHTML('beforeEnd', `
+	document.head.insertAdjacentHTML('beforeEnd', `
     <style>
-        body::-webkit-scrollbar {
-            width: 2px;
-            height: 2px;
-        }
-
-        body::-webkit-scrollbar-thumb {
-            background: #24272a;
-            border-radius: 10px;
-        }
-
-        body::-webkit-scrollbar-thumb:hover {
-            background: #b3afb3;
-        }
-
-        body::-webkit-scrollbar-track {
-            background: #e7e7e7;
-            border-radius: 10px;
-            -webkit-box-shadow: inset 0px 0px 0px 0px #f0f0f0;
-            box-shadow: inset 0px 0px 0px 0px #f0f0f0;
-        }
-
         ._page {
             -webkit-box-flex: 1;
             -ms-flex: 1 1 auto;
@@ -37,7 +16,7 @@ window.addEventListener('DOMContentLoaded', function () {
     </style>
     `)
 
-    // Dynamic Adapt v.1
+	// Dynamic Adapt v.1
 // HTML data-da="where(uniq class name),position(digi),when(breakpoint)"
 // e.x. data-da="item,2,992"
 // Andrikanych Yevhen 2020
@@ -174,7 +153,7 @@ window.addEventListener('DOMContentLoaded', function () {
 		//const viewport_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 	}
 }());;
-    //SlideToggle
+	//SlideToggle
 let _slideUp = (target, duration = 500) => {
 	target.style.transitionProperty = 'height, margin, padding';
 	target.style.transitionDuration = duration + 'ms';
@@ -523,7 +502,7 @@ function inputs_init(inputs) {
 }
 
 ;
-    {
+	{
     let menuItemHasChildren = document.querySelectorAll('.menu__list .menu-item-has-children');
     if (menuItemHasChildren.length) {
         menuItemHasChildren.forEach(item => {
@@ -684,7 +663,7 @@ window.addEventListener('load', function () {
         }
     }
 });
-    {
+	{
     let footerNavItems = Array.from(document.querySelector('.footer__nav').children);
     if (footerNavItems.length) {
         footerNavItems.forEach(item => {
@@ -714,7 +693,7 @@ window.addEventListener('load', function () {
         })
     }
 };
-    // ==== Popup form handler====
+	// ==== Popup form handler====
 
 const popupLinks = document.querySelectorAll('.popup-link');
 const body = document.querySelector('body');
@@ -863,11 +842,10 @@ document.addEventListener('keydown', function(e) {
 
 // === AND Polyfill ===;
 
-    
-	let productListAll = document.querySelectorAll('.products__list');
-	if (productListAll.length) {
-		productListAll.forEach(productList => {
-			const addClasses = () => {
+	function addClassesForProductsListChildren() {
+		let productListAll = document.querySelectorAll('.products__list');
+		if (productListAll.length) {
+			productListAll.forEach(productList => {
 				let arr = Array.from(productList.children).filter(i => {
 					if (i.previousElementSibling) {
 						if (i.previousElementSibling.classList.contains('big')) {
@@ -881,28 +859,62 @@ document.addEventListener('keydown', function(e) {
 				})
 					.filter(i => i.classList.contains('big') ? false : i);
 
-					arr.forEach((item, index) => {
-						if( index % 3 === 0) {
-							item.classList.add('first');
-						}
-						if( index % 3 === 1) {
-							item.classList.add('second');
-						}
-						if( index % 3 === 2) {
-							item.classList.add('third');
-						}
-					})
-			}
-
-			addClasses();
-
-			let observer = new MutationObserver(mutationRecords => {
-				addClasses();
-			});
-
-			observer.observe(productList, {
-				childList: true
-			});
-		})
+				arr.forEach((item, index) => {
+					if (index % 3 === 0) {
+						item.classList.add('first');
+					}
+					if (index % 3 === 1) {
+						item.classList.add('second');
+					}
+					if (index % 3 === 2) {
+						item.classList.add('third');
+					}
+				})
+			})
+		}
 	}
+
+
+	// let productListAll = document.querySelectorAll('.products__list');
+	// if (productListAll.length) {
+	// 	productListAll.forEach(productList => {
+	// 		const addClasses = () => {
+	// 			let arr = Array.from(productList.children).filter(i => {
+	// 				if (i.previousElementSibling) {
+	// 					if (i.previousElementSibling.classList.contains('big')) {
+	// 						return false
+	// 					} else {
+	// 						return i;
+	// 					}
+	// 				} else {
+	// 					return i
+	// 				}
+	// 			})
+	// 				.filter(i => i.classList.contains('big') ? false : i);
+
+	// 				arr.forEach((item, index) => {
+	// 					if( index % 3 === 0) {
+	// 						item.classList.add('first');
+	// 					}
+	// 					if( index % 3 === 1) {
+	// 						item.classList.add('second');
+	// 					}
+	// 					if( index % 3 === 2) {
+	// 						item.classList.add('third');
+	// 					}
+	// 				})
+	// 		}
+
+	// 		addClasses();
+
+	// 		let observer = new MutationObserver(mutationRecords => {
+	// 			console.log('observe test')
+	// 			addClasses();
+	// 		});
+
+	// 		observer.observe(productList, {
+	// 			childList: true
+	// 		});
+	// 	})
+	// }
 });
